@@ -29,18 +29,16 @@ export default {
         isIcon: [
           require("@/assets/images/sy.png"),
           require("@/assets/images/fl.png"),
-          require("@/assets/images/fxh@2x.png"), //活动
           require("@/assets/images/gwc.png"),
           require("@/assets/images/wd.png")
         ],
         Icon: [
           require("@/assets/images/home_icon.png"),
           require("@/assets/images/class_icon.png"),
-          require("@/assets/images/fx@2x.png"),//活动
           require("@/assets/images/cart_icon.png"),
           require("@/assets/images/per_icon.png")
         ],
-        font: ["Home", "Classification", "Activity", "Shopping Cart", "Mine"]
+        font: ["Home", "Classification", "Shopping Cart", "Account"]
       }
     };
   },
@@ -100,11 +98,11 @@ export default {
     box-shadow: border-box;
     z-index: 99999999;
     li {
-      width: 20%;
+      width: 25%;
       text-align: center;
 
       .font {
-        font-size: 0.2rem;
+        font-size: 0.25rem;
         color: #333;
         padding-bottom: 5/100rem;
         display: inline-block;
@@ -154,17 +152,11 @@ export default {
     }
     li:nth-child(3) {
       img {
-        width: 0.45rem;
-        height: 0.41rem;
-      }
-    }
-    li:nth-child(4) {
-      img {
         width: 0.54rem;
         height: 0.4rem;
       }
     }
-    li:nth-child(5) {
+    li:nth-child(4) {
       img {
         width: 0.35rem;
         height: 0.4rem;

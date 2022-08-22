@@ -1,28 +1,28 @@
 <template>
   <div class="home" ref="home">
-    <div v-title data-title="主页">主页</div>
-    <!-- <home-header :userName="getData"></home-header> -->
-    <div class="header" :style="'background-color:' + apicolor">
-        <router-link to="/home">
-          <img src="../../assets/images/logopng.png" class="header_logo"/>
-        </router-link>
+    <div v-title data-title="home">home</div>
+    <div class="header">
+        <div>
+          <img src="../../assets/images/MGD_Logo_Text.png" class="header_logo"/>
+        </div>
         <div class="header_seek" @click="searchIn">
-            <img class="header_seek_img" :src="seekImg" alt="搜素img">
+            <img class="header_seek_img" :src="seekImg">
             <form action="javascript:void(0);">
-                <input type="search" placeholder="Search..." @keyup.enter.stop="submit(value)">
+                <input type="search" placeholder="Search Product..." @keyup.enter.stop="submit(value)">
             </form>
         </div>
-        <!-- <div class="header_news">
-            <router-link to = '/myNews' class="trouble">
-                <img class="header_news_advices" :src="advices" alt="消息img">
-            </router-link>
-        </div> -->
     </div>
-        <mt-swipe :auto="3000">
-          <mt-swipe-item v-for="item in homeBanner.slice(0,8)" :key="item.id">
-            <img class="home-banner-img" :src="URL + item.pic_url" @click="goAd(item.ad_link)" />
-          </mt-swipe-item>
-        </mt-swipe>
+    <mt-swipe :auto="3000">
+      <mt-swipe-item>
+        <img class="home-banner-img" src="../../assets/images/Covercopy.png" />
+      </mt-swipe-item>
+      <mt-swipe-item>
+        <img class="home-banner-img" src="../../assets/images/s1.png" />
+      </mt-swipe-item>
+      <mt-swipe-item>
+        <img class="home-banner-img" src="../../assets/images/s2.png" />
+      </mt-swipe-item>
+    </mt-swipe>
 
     <!-- 快捷链接加快讯 -->
     <news-flash
@@ -31,6 +31,45 @@
       @hit="hit"
     ></news-flash>
 
+    <div>
+      <div class="goods_new slide">
+        <div class="title">
+          <div class="name">Popular Product</div>
+          <div class="more" @click="newlink()">More</div>
+        </div>
+        <div class="cards">
+            <div class="card" v-for="good in 6" :key="good">
+              <div class="card-image">
+                <img src="../../assets/images/c2.png" />
+              </div>
+              <div class="title">ရေချိုးခန်းသုံးပစ္စည်းများ</div>
+              <div class="price-box">
+                <span class="price">၁၀၀၀၀ ကျပ်</span>
+              </div>
+            </div>		
+        </div>
+      </div>
+    </div>
+    <ul class="floor">
+      <li class="floor-item">
+        <div class="top">
+          <div class="title">All Product</div>
+        </div>
+        <div class="goods-box">
+          <div
+            :key="all"
+            class="floor-goods"
+            v-for="all in 12"
+          >
+            <img src="../../assets/images/c1.png"/>
+            <p class="title">
+              ကြွေပြားများ
+            </p>
+            <p class="price">၁၀၀၀၀ ကျပ်</p>
+          </div>
+        </div>
+      </li>
+    </ul>
     <Shopsn></Shopsn>
     <div class="load-wrap" v-show="$store.state.load_wrap" @touchmove.prevent>
       <mt-spinner type="triple-bounce" color="rgb(38, 162, 255)"></mt-spinner>
@@ -542,97 +581,49 @@ export default {
 </style>
 
 <style lang="less" scoped>
-    .header{
-            // width: 100%;
-            padding: .2rem;
-            background-clip: #d02629;
-        .header_logo{
-            position: absolute;    
-            width: 2.5rem;
-            height: 0.6rem;
-            display: block;
-            // background-image: url("../../assets/images/logo.png");
-            background-size: 100% 100%;
-        }
-        .header_seek{
-            width: 4.4rem;
-            height: 0.6rem;
-            background-color: #d02629;
-            margin: 0 0rem 0 2.6rem;
-            border-radius: 0.25rem;
-            position: relative;    
-        }
-         .header_seek input{
-                width: 100%;
-                height: 0.6rem;
-                border-radius: 0.25rem ;
-                border: 0.01rem solid #ffffff;
-                outline: none;
-                font-size: 0.26rem;
-                text-indent: 0.75rem;
-                background-color: #ffffff;
-                color:#fff;
-                margin: 0 !important;
-            }
-         .header_seek_img{
-             position: absolute;
-             top:0.18rem;
-             left: 0.25rem;
-             display: block;
-             width: 0.26rem;
-             height: 0.27rem;
-         }   
-         .header_seek input::-webkit-input-placeholder{
-                color: #999;
-         }
-         .header_news{
-             position: absolute;
-             right: 0.32rem;
-             top:0.2rem;
-             width: auto;
-             height: 0.6rem; 
-           	
-         }
-         .header_news a{
-             display: block;
-            //  width: 1rem;
-             height: 0.6rem;
-            //  float: left; 
-             text-decoration: none;
-             text-align: center;
-             color: #fff;
-             font-size: 0.16rem
-         }
-         .header_news .trouble{
-             display: block;
-            //  width: 1rem;
-             height: 0.6rem;
-            //  float: left; 
-             text-decoration: none;
-             text-align: center;
-             color: #fff;
-             font-size: 0.16rem
-         }
-         .header_news_RichScan{
-             width: 0.32rem;
-             height: 0.32rem;
-             display: block;
-             margin: auto;
-             margin-top: 0.07rem
-         }
-        .header_RichScan{
-            width: 100%;
-            line-height: 0.2rem;
-            /*font-size: .1rem;*/
-        }
-        .header_news_advices{
-             width: 0.5rem;
-             height: 0.5rem;
-             display: block;
-             margin: auto;
-             margin-top: 0.05rem
-        }
+  .header{
+    padding: 0 .2rem 0 .2rem;
+    background-color: #eac9eb;
+    display: flex;
+    .header_logo{  
+      width: 3rem;
+      height: 0.94rem;
+      display: block;
+      /* background-image: url("../../assets/images/logo.png"); */
+      background-size: 100% 100%;
     }
+    .header_seek{
+      width: 3.9rem;
+      height: 0.6rem;
+      background-color: #eac9eb;
+      margin: .2rem 0 .2rem .2rem;
+      border-radius: 0.25rem;
+      /* position: relative;  */
+    }
+    .header_seek input{
+      width: 100%;
+      height: 0.6rem;
+      border-radius: 0.25rem ;
+      border: 0.01rem solid #ffffff;
+      outline: none;
+      font-size: 0.26rem;
+      text-indent: 0.75rem;
+      background-color: #ffffff;
+      color:#fff;
+      margin: 0 !important;
+      }
+      .header_seek_img{
+        position: absolute;
+        top:0.35rem;
+        left: 3.65rem;
+        display: block;
+        width: 0.26rem;
+        height: 0.27rem;
+      }   
+      .header_seek input::-webkit-input-placeholder{
+        color: #999;
+      }
+  }
 .home {
   .to-top {
     position: fixed;
@@ -991,7 +982,7 @@ export default {
 			display:flex;
 			justify-content: space-between;
 			// width:100%;
-			padding:0 .3rem .3rem .3rem;
+			padding:.3rem .3rem .3rem .3rem;
 			display: flex;
 			flex-wrap: wrap;
 			color:#909399;
@@ -1107,7 +1098,7 @@ export default {
           word-wrap: break-word;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
-          height: .7rem;
+          /* height: .7rem; */
           line-height: .4rem;
           text-align: left;
           margin-top: .1rem;
@@ -1415,7 +1406,7 @@ export default {
       width: 100%;
       text-align: center;
       position: absolute;
-      height: 3.28rem;
+      height: 3.5rem;
       z-index: 10;
     img {
       width: 100%;
