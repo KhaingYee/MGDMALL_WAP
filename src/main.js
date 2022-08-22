@@ -155,7 +155,7 @@ router.beforeEach((to, from, next) => {
         case 'home':
             {
                 sessionStorage.setItem('router_index', 0);
-                document.title = "首页";
+                document.title = "MGD MALL";
             }
             break;
         case 'class':

@@ -52,22 +52,17 @@ export default {
           break;
         case 1:
           this.$router.push({
-            path: "/class"
-          });
-          break;
-        case 2:
-          this.$router.push({
-              path: "/activity"
+              path: "/category"
           });
           break; 
-        case 3:
+        case 2:
           this.$router.push({
-            name: "Cart"
+            path: "cart"
           });
           break;
-        case 4:
+        case 3:
           this.$router.push({
-            path: "/person"
+            path: "/personal"
           });
           break;
       }
