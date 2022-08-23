@@ -1,30 +1,33 @@
 <template>
     <div class="flash-wrap">
     <div class="index_Ctrl">
+        <div class="title">
+            <div class="name">Category</div>
+        </div>
       <div class="index_Ctrl_auto">
           <span class="link">
-              <img src="../../../assets/images/c1.png"/>
-              <span>ကြွေပြားများ</span>
+              <img src="../../../assets/cate.jpg"/>
+              <span> Ceramic Tile</span>
           </span>
           <span class="link">
             <img src="../../../assets/images/c2.png"/>
-            <span>ရေချိုးခန်းသုံးပစ္စည်းများ</span>
+            <span>Bathroom accessories</span>
         </span>
         <span class="link">
             <img src="../../../assets/images/category.jpg"/>
-            <span>အီလက်ထရောနစ်ပစ္စည်းများ</span>
+            <span>This is the electronic accessories</span>
         </span>
         <span class="link">
-            <img src="../../../assets/images/c1.png"/>
-            <span>ကြွေပြားများ</span>
+            <img src="../../../assets/cate.jpg"/>
+            <span> Ceramic Tile</span>
         </span>
         <span class="link">
           <img src="../../../assets/images/c2.png"/>
-          <span>ရေချိုးခန်းသုံးပစ္စည်းများ</span>
+          <span>Bathroom accessories</span>
       </span>
       <span class="link">
           <img src="../../../assets/images/category.jpg"/>
-          <span>အီလက်ထရောနစ်ပစ္စည်းများ</span>
+          <span>This is the electronic accessories</span>
       </span>
       </div>
     </div>
@@ -48,10 +51,14 @@ import qs from "qs"
          .index_Ctrl{
            width: 100%;
            overflow: hidden;
-           background-color: #fff;
-        //    border-top:1px solid #DEDEDE;
-           padding-bottom: 0.2rem;
-           margin-top: 3.52rem;
+           margin-top: 3.49rem;
+           .title{
+			    padding:.3rem .2rem .1rem .2rem;
+                .name{
+                    font-size: .26rem;
+                    color: #000;
+                }		
+		    }
          .index_Ctrl_auto{
             width: 7.1rem;
             overflow: hidden;
@@ -69,6 +76,8 @@ import qs from "qs"
             margin-right: 0.2rem;
             margin-top: 0.2rem;
             overflow: hidden;
+            background-color: #fff;
+            border-radius:.1rem;
         }
         .index_Ctrl_auto .link:nth-child(4n){
             margin-right: 0;
@@ -79,15 +88,18 @@ import qs from "qs"
             display: block;    
         }
         .index_Ctrl_auto .link span{
-            width: 100%;
-            height: 0.6rem;
-            display: block;
-            color: #333;
-            font-size: 0.26rem;
-            text-align: center;
+            height: 0.62rem;
+            color: #000;
             line-height: 0.35rem;
-            padding-top: 0.1rem;
-            font-weight: 500;
+            padding: .1rem .2rem;
+            font-size: .24rem;
+            display: -webkit-box;
+            overflow: hidden;
+            white-space: normal !important;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
         }  
     }
 </style>

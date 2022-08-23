@@ -26,21 +26,61 @@
 
     <!-- 快捷链接加快讯 -->
     <news-flash></news-flash>
-
+    <div class="store-shops">
+      <div class="title">
+        <div class="name">Store Shop</div>
+      </div>
+      <div class="store-cart">
+        <div class="cart">
+          <img class="image" src="../../assets/store-shop.jpg"/>
+        </div>
+        <div class="cart">
+          <img class="image" src="../../assets/store-shop1.jpg"/>
+        </div>
+        <div class="cart">
+          <img class="image" src="../../assets/store-shop.jpg"/>
+        </div>
+        <div class="cart">
+          <img class="image" src="../../assets/store-shop1.jpg"/>
+        </div>
+        <div class="cart">
+          <img class="image" src="../../assets/store-shop.jpg"/>
+        </div>
+      </div>
+    </div>
     <div>
-      <div class="goods_new slide">
+      <div class="goods_new">
         <div class="title">
           <div class="name">Popular Product</div>
-          <div class="more">More</div>
         </div>
         <div class="cards">
             <div class="card" v-for="good in 6" :key="good">
               <div class="card-image">
                 <img src="../../assets/images/c2.png" />
               </div>
-              <div class="title">ရေချိုးခန်းသုံးပစ္စည်းများ</div>
+              <div class="title">K-Lite Rechargeable 5W Led Torch Light Kl-7131</div>
               <div class="price-box">
-                <span class="price">၁၀၀၀၀ ကျပ်</span>
+                <div class="price">10000 ks</div>
+                <div class="dis-price">10500 ks</div>
+              </div>
+            </div>		
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="promotion-goods">
+        <div class="title">
+          <div class="name">Promotion Product</div>
+        </div>
+        <div class="cards">
+            <div class="card" v-for="good in 6" :key="good">
+              <div class="card-image">
+                <img src="../../assets/cate.jpg" />
+              </div>
+              <div class="title">Blue label and Spy Red Wine Cooler 4X275Ml</div>
+              <div class="price-box">
+                <div class="price">15000 ks</div>
+                <div class="dis-price">15500 ks</div>
               </div>
             </div>		
         </div>
@@ -53,16 +93,59 @@
         </div>
         <div class="goods-box">
           <div
-            :key="all"
             class="floor-goods"
-            v-for="all in 12"
+            @click="goToProduct()"
           >
             <img src="../../assets/images/c1.png"/>
             <p class="title">
-              Ceramic Tile
+              Ceramic Tile Slide charge (10*10) and ceramic Tile charge
             </p>
-            <p class="price">1000 kyats</p>
+            <p class="price">1000 ks</p>
+            <p class="dis-price">1500 ks</p>
           </div>
+
+            <div
+            :key="all"
+            class="floor-goods"
+            v-for="all in 2"
+            @click="goToProduct()"
+          >
+            <img src="../../assets/cate.jpg"/>
+            <p class="title">
+              Blue label and Spy Red Wine Cooler
+            </p>
+            <p class="price">1000 ks</p>
+            <p class="dis-price">1500 ks</p>
+          </div>
+
+            <div
+            :key="all"
+            class="floor-goods"
+            v-for="all in 2"
+            @click="goToProduct()"
+          >
+            <img src="../../assets/images/c2.png"/>
+            <p class="title">
+              Bathroom accessories and ceramic Tile charge
+            </p>
+            <p class="price">1000 ks</p>
+            <p class="dis-price">1500 ks</p>
+          </div>
+
+            <div
+            :key="all"
+            class="floor-goods"
+            v-for="all in 2"
+            @click="goToProduct()"
+          >
+            <img src="../../assets/cate.jpg"/>
+            <p class="title">
+              Blue label and Spy Red Wine Cooler
+            </p>
+            <p class="price">1000 ks</p>
+            <p class="dis-price">1500 ks</p>
+          </div>
+
         </div>
       </li>
     </ul>
@@ -81,6 +164,13 @@ export default {
     return {
       seekImg:require('@/assets/images/sousuo@2x.png'),
     };
+  },
+  methods:{
+    goToProduct(){
+      this.$router.push({
+        path: "/product"
+      });
+    }
   },
   components: {
     NewsFlash,
@@ -153,107 +243,124 @@ export default {
     width: 100%;
     text-align: center;
   }
-  .slide{
-		padding: 0 0 .2rem 0;
-	
-		.title{
-			display:flex;
-			justify-content: space-between;
-			// width:100%;
-			padding:.3rem .3rem .3rem .3rem;
-			display: flex;
-			flex-wrap: wrap;
-			color:#909399;
-			.name{
+  .store-shops{
+    .title{
+      padding: .3rem .2rem;
+      .name{
         font-size: .26rem;
-        color: #111;
-      }	
-      .more{
-        font-size: .24rem;
-      }		
-		}
-    .title1{
-			display:flex;
-			justify-content: space-between;
-			// width:100%;
-			padding:.1rem .3rem .3rem .3rem;
-			display: flex;
-			flex-wrap: wrap;
-			color:#909399;
-			.name{
-        font-size: .26rem;
-        color: #111;
-      }	
-      .more{
-        font-size: .24rem;
-      }		
-		}
-		.store-cards{
+        color: #000;
+      }
+    }
+    .store-cart{
 			display: flex;
 			flex-direction: row;
-			// width:100%;
 			overflow-x: auto;
-			padding:0 .3rem;
+			padding:0 .2rem;
 			flex-wrap: nowrap;
-			.store-card{
-				background:white;
-				width:2.4rem;
-				flex: 0 0 auto;
-				height:2.8rem;
-			
-				margin-right:.2rem;
-				overflow: hidden;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				
-				position:relative;
-				.main{
-					width:2.4rem;
-					height:1.5rem;
-					border:.06rem solid white;
-					img{
-						width: 100%;
-						height: 100%;
-						background-color:#f0f0f0 ;
-					}
-				}
-				.logo{
-					width: 1rem;
-					height:1rem;
-					margin-top: -.5rem;
-					border:.06rem solid white;
-					img{
-						width:100%;
-						height:100%;
-						background-color:#f0f0f0 ;
-						
-					}
-				}
-				.title{
-					text-align: center;
-					color:#303133;
-					display: flex;
-					align-items: center;
-					width: auto !important;
-				}
-			}
+      .cart{
+        width: 3rem;
+        height: 3rem;
+        border: .01rem solid #f1f1f1;
+        margin-right:.2rem;
+        flex: 0 0 auto;
+        overflow: hidden;
+        border-radius: 0.15rem;
+          .image{
+            width: 100%;
+            height: 100%;
+          }
+      }
+    }
+  }
+  .goods_new{
+		.title{
+			padding:.3rem .2rem;
+			.name{
+        font-size: .26rem;
+        color: #000;
+      }		
 		}
 		.cards{
 			display: flex;
 			flex-direction: row;
-			// width:100%;
 			overflow-x: auto;
-			padding:0 .3rem;
+			padding:0 .2rem;
 			flex-wrap: nowrap;
 			.card{
 				width:3rem;
 				flex: 0 0 auto;
-				height:4.5rem;
+				/* height:4.5rem; */
 				background:white;
 				margin-right:.2rem;
 				overflow: hidden;
-				// border-radius: 5px;
+        border-radius:.1rem;
+				.card-image{
+					width:3rem;
+					height:3rem;
+					opacity:1 !important;
+					img{
+						width:100%;
+						height:100%;
+						
+					}
+					background-color: #f0f0f0;
+				}
+				.title{
+          color: #000;
+          padding: .1rem .2rem;
+          font-size: .24rem;
+          display: -webkit-box;
+          overflow: hidden;
+          white-space: normal !important;
+          text-overflow: ellipsis;
+          word-wrap: break-word;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          height: .7rem;
+          line-height: .4rem;
+          text-align: left;
+          margin-top: .1rem;
+				}
+				.price-box{
+					padding:0 .2rem;
+					.price{
+						color:#d02629;
+						font-size:.24rem;
+            padding-top:.1rem;		
+					}
+          .dis-price{
+						color:#303133;
+						font-size:.24rem;
+            padding:.1rem 0;
+            text-decoration: line-through;				
+					}
+				}
+			}
+		}
+	}
+  .promotion-goods{
+		padding: 0 0 .2rem 0;	
+		.title{
+			padding:.3rem .2rem;
+			.name{
+        font-size: .26rem;
+        color: #000;
+      }		
+		}
+		.cards{
+			display: flex;
+			flex-direction: row;
+			overflow-x: auto;
+			padding:0 .2rem;
+			flex-wrap: nowrap;
+			.card{
+				width:3rem;
+				flex: 0 0 auto;
+				/* height:4.5rem; */
+				background:white;
+				margin-right:.2rem;
+				overflow: hidden;
+        border-radius:.1rem;
 				.card-image{
 					width:3rem;
 					height:3rem;
@@ -276,22 +383,23 @@ export default {
           word-wrap: break-word;
           -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
-          /* height: .7rem; */
+          height: .7rem;
           line-height: .4rem;
           text-align: left;
           margin-top: .1rem;
 				}
 				.price-box{
-					display: flex;
-					justify-content: space-between;
-					padding:.05rem .2rem .2rem .2rem;
-					color:#909399;
-					font-size: .16rem;
-					align-items: center;
+					padding:0 .2rem;
 					.price{
-						color:#da3632;
+						color:#d02629;
 						font-size:.24rem;
-						
+            padding-top:.1rem;		
+					}
+          .dis-price{
+						color:#303133;
+						font-size:.24rem;
+            padding:.1rem 0;
+            text-decoration: line-through;				
 					}
 				}
 			}
@@ -313,48 +421,7 @@ export default {
         .title {
           text-align: center;
           font-size: 0.28rem;
-          color: #111111;
-        }
-        .more {
-          line-height: 0.4rem;
-          color: #999;
-          font-size: 0.28rem;
-          position: relative;
-          padding-right: 0.2rem;
-          em {
-            position: absolute;
-            right: 0;
-            top: 0.07rem;
-            i {
-              border-left: 6px solid #ccc;
-              border-top: 6px solid transparent;
-              border-bottom: 6px solid transparent;
-              position: absolute;
-              right: -0.04rem;
-              top: 0;
-            }
-            b {
-              border-left: 6px solid #f2f2f2;
-              border-top: 6px solid transparent;
-              border-bottom: 6px solid transparent;
-              position: absolute;
-              right: 0;
-              top: 0;
-            }
-          }
-        }
-      }
-      .image-ad {
-        width: 7.45rem;
-        height: 3.5rem;
-        border: 1px solid #eee;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        img {
-          width: 100%;
-          height: 3.5rem;
-          border: none;
+          color: #000;
         }
       }
       .goods-box {
@@ -367,7 +434,6 @@ export default {
           background-color: #fff;
           width: 49%;
           float: left;
-          // border: 3px solid #F2F1F2;
           box-sizing: border-box;
           display: flex;
           flex-direction: column;
@@ -386,52 +452,25 @@ export default {
             word-wrap: break-word;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            color: #343434;
-            /* height: .8rem; */
+            color: #000;
+            height: .8rem;
             line-height: .4rem;
             text-align: left;
             padding: 0 0.2rem;
-            font-size: .28rem;
+            font-size: .26rem;
             margin-top: .1rem;
-              .shop-grade{
-                font-size: .22rem;
-                background: #de2d35;
-                color: white;
-                border-radius: .05rem;
-                padding: .05rem .1rem;
-                text-align: center;
-              }
           }
-          .showdiv{
-            display: flex;
-            padding: .01rem .2rem;
-            .couponshow{
-              /* background: url(../../assets/showcoupon.png) no-repeat; */
-              background-size: 100% 100%;
-              font-size: .2rem;
-              padding: .25em .1rem 0 .1rem;
-              // height: .25rem;
-              margin: .06rem .07rem 0 0;
-              color: #fff;
-            }
-            .discountshow{
-              color: #da3632;
-              border: 1px solid #da3632;
-              height: .21rem;
-              padding: .04rem .02rem .02rem .02rem;
-              font-size: .18rem;
-              margin: .05rem .07rem 0 .02rem;
-            }
-        }
         .price {
-          color: #da3632;
-          font-size: .26rem;
-          font-weight: bold;
-          text-align: left;
-          padding: 0 0.2rem;
-          height: .65rem;
-          line-height: .55rem;
-      }
+          color: #d02629;
+          font-size: .24rem;
+          padding: .1rem 0.2rem 0 .2rem;
+        }
+        .dis-price{
+          color:#303133;
+          font-size:.24rem;
+          padding:.2rem;
+          text-decoration: line-through;				
+				}
       }
     }
   }

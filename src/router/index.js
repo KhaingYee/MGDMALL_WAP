@@ -6,6 +6,7 @@ const Home = r => require(['@/components/home/home'], r);
 const category = r => require(['@/components/classification/category'], r);
 const cart = r => require(['@/components/cart/cart'], r);
 const personal = r => require(['@/components/personal/personal'], r);
+const product = r => require(['@/components/product/productDetail'], r);
 const subject = r => require(['@/components/subject'], r);
 
 Vue.use(Router)
@@ -50,11 +51,11 @@ const router = new Router({
                     },
                 ]
             },
-            // { // 
-            //     path: '/LogIn',
-            //     name: 'LogIn',
-            //     component: LogIn
-            // },
+            {
+                path: '/product',
+                name: 'product',
+                component: product
+            },
 
         ]
     }],
