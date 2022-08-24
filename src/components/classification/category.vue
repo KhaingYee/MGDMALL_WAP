@@ -31,7 +31,7 @@
               <el-collapse-item :title="item.class_name" v-for="item in condata" :key="item.id">
                 <ul class="con clearfix" v-if="item.three">
                   <li class="fl" v-for="con in item.three" :key="con.id">
-                    <img :src="con.pic_url" />
+                    <img v-lazy="con.pic_url" />
                     <p class="text1-hidden">{{con.class_name}}</p>
                   </li>
                 </ul>
@@ -45,7 +45,7 @@
 </template>
 <script>
 export default {
-  name: "classification",
+  name: "category",
   data() {
     return {
         seekImg:require('@/assets/images/sousuo@2x.png'),
@@ -292,53 +292,6 @@ export default {
             height: 0.64rem;
             line-height: 0.64rem;
             padding: 0 0.2rem;
-          }
-        }
-      }
-    }
-    .item-tab {
-      margin-top: 0.1rem;
-      .mint-navbar {
-        border-bottom: 1px solid #f2f2f2;
-      }
-      .mint-tab-item {
-        padding: 0;
-        color: #666;
-        border-color: #f9781e;
-        margin: 0;
-        height: 0.7rem;
-        line-height: 0.7rem;
-        margin-left: 0.4rem;
-      }
-      .mint-tab-item.is-selected {
-        color: #f9781e;
-      }
-    }
-    .ification-wrap {
-      .title {
-        height: 1rem;
-        line-height: 1rem;
-        font-size: 0.26rem;
-        color: #333;
-        font-weight: bold;
-      }
-      .tab-content {
-        li {
-          margin-left: 0.3rem;
-          margin-right: 0.1rem;
-          text-align: center;
-          img {
-            width: 1.24rem;
-            height: 1.24rem;
-            border-radius: 100%;
-            box-sizing: border-box;
-          }
-          p {
-            font-size: 0.24rem;
-            color: #797979;
-            line-height: 0.7rem;
-            width: 1.24rem;
-            overflow: hidden;
           }
         }
       }

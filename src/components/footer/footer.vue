@@ -29,16 +29,18 @@ export default {
         isIcon: [
           require("@/assets/images/sy.png"),
           require("@/assets/images/fl.png"),
+          require("@/assets/images/fxh@2x.png"),
           require("@/assets/images/gwc.png"),
           require("@/assets/images/wd.png")
         ],
         Icon: [
           require("@/assets/images/home_icon.png"),
           require("@/assets/images/class_icon.png"),
+          require("@/assets/images/fx@2x.png"),
           require("@/assets/images/cart_icon.png"),
           require("@/assets/images/per_icon.png")
         ],
-        font: ["Home", "Classification", "Shopping Cart", "Account"]
+        font: ["Home", "Categories","Message", "Cart", "Account"]
       }
     };
   },
@@ -52,15 +54,20 @@ export default {
           break;
         case 1:
           this.$router.push({
-              path: "/category"
-          });
-          break; 
-        case 2:
-          this.$router.push({
-            path: "cart"
+            path: "/category"
           });
           break;
+        case 2:
+          this.$router.push({
+              path: "/messenger"
+          });
+          break; 
         case 3:
+          this.$router.push({
+            path: "/cart"
+          });
+          break;
+        case 4:
           this.$router.push({
             path: "/personal"
           });
@@ -93,12 +100,12 @@ export default {
     box-shadow: border-box;
     z-index: 99999999;
     li {
-      width: 25%;
+      width: 20%;
       text-align: center;
 
       .font {
-        font-size: 0.25rem;
-        color: #333;
+        font-size: 0.24rem;
+        color: #000;
         padding-bottom: 5/100rem;
         display: inline-block;
       }
@@ -147,11 +154,17 @@ export default {
     }
     li:nth-child(3) {
       img {
-        width: 0.54rem;
-        height: 0.4rem;
+        width: 0.43rem;
+        height: 0.41rem;
       }
     }
     li:nth-child(4) {
+      img {
+        width: 0.6rem;
+        height: 0.4rem;
+      }
+    }
+    li:nth-child(5) {
       img {
         width: 0.35rem;
         height: 0.4rem;

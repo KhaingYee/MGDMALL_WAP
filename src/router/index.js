@@ -4,6 +4,7 @@ import Router from 'vue-router'
 
 const Home = r => require(['@/components/home/home'], r);
 const category = r => require(['@/components/classification/category'], r);
+const messenger = r => require(['@/components/message/messenger'], r);
 const cart = r => require(['@/components/cart/cart'], r);
 const personal = r => require(['@/components/personal/personal'], r);
 const product = r => require(['@/components/product/productDetail'], r);
@@ -38,6 +39,11 @@ const router = new Router({
                         path: '/category',
                         name: 'category',
                         component: category
+                    },
+                    {
+                        path: '/messenger',
+                        name: 'messenger',
+                        component: messenger
                     },
                     {
                         path: '/cart',

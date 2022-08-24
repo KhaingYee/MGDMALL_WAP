@@ -158,16 +158,16 @@ router.beforeEach((to, from, next) => {
                 document.title = "MGD MALL";
             }
             break;
-        case 'class':
+        case 'category':
             sessionStorage.setItem('router_index', 1);
             break;
-        case 'activity':
+        case 'messenger':
             sessionStorage.setItem('router_index', 2);
             break;
-        case 'Cart':
+        case 'cart':
             sessionStorage.setItem('router_index', 3);
             break;
-        case 'person':
+        case 'personal':
             sessionStorage.setItem('router_index', 4);
             break;
     };
