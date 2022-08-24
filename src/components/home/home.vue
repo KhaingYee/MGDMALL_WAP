@@ -46,6 +46,9 @@
         <div class="cart">
           <img class="image" src="../../assets/store-shop.jpg"/>
         </div>
+        <div class="cart">
+          <div class="see-more">See More</div>
+        </div>
       </div>
     </div>
     <div>
@@ -61,9 +64,11 @@
               <div class="title">K-Lite Rechargeable 5W Led Torch Light Kl-7131</div>
               <div class="price-box">
                 <div class="price">10000 ks</div>
-                <div class="dis-price">10500 ks</div>
               </div>
-            </div>		
+            </div>	
+            <div class="card">
+              <div class="see-more">See More</div>
+            </div>	
         </div>
       </div>
     </div>
@@ -77,11 +82,18 @@
               <div class="card-image">
                 <img src="../../assets/cate.jpg" />
               </div>
+              <!-- <div class="promotion-discount">
+                <img src="../../assets/Promo .png" class="img"/>
+                <div class="percent">-33%</div>
+              </div> -->
               <div class="title">Blue label and Spy Red Wine Cooler 4X275Ml</div>
               <div class="price-box">
                 <div class="price">15000 ks</div>
                 <div class="dis-price">15500 ks</div>
               </div>
+            </div>
+            <div class="card">
+              <div class="see-more">See More</div>
             </div>		
         </div>
       </div>
@@ -89,7 +101,7 @@
     <ul class="floor">
       <li class="floor-item">
         <div class="top">
-          <div class="title">All Product</div>
+          <div class="title">Just For You</div>
         </div>
         <div class="goods-box">
           <div
@@ -97,11 +109,19 @@
             @click="goToProduct()"
           >
             <img src="../../assets/images/c1.png"/>
+            <div class="promotion-discount">
+              <img src="../../assets/Promo .png" class="img"/>
+              <div class="percent">-33%</div>
+            </div>
             <p class="title">
               Ceramic Tile Slide charge (10*10) and ceramic Tile charge
             </p>
             <p class="price">1000 ks</p>
             <p class="dis-price">1500 ks</p>
+            <div class="rating">
+              <img v-for = 'n in parseInt(4)' :key = 'n' :src="imgYes">
+              <img v-for = 'n in 5-parseInt(4)' :key ="n + 'i'" :src="imgNo">
+            </div>
           </div>
 
             <div
@@ -111,11 +131,19 @@
             @click="goToProduct()"
           >
             <img src="../../assets/cate.jpg"/>
+            <div class="promotion-discount">
+              <img src="../../assets/Promo .png" class="img"/>
+              <div class="percent">-20%</div>
+            </div>
             <p class="title">
               Blue label and Spy Red Wine Cooler
             </p>
             <p class="price">1000 ks</p>
             <p class="dis-price">1500 ks</p>
+            <div class="rating">
+              <img v-for = 'n in parseInt(3)' :key = 'n' :src="imgYes">
+              <img v-for = 'n in 5-parseInt(3)' :key ="n + 'i'" :src="imgNo">
+            </div>
           </div>
 
             <div
@@ -130,6 +158,10 @@
             </p>
             <p class="price">1000 ks</p>
             <p class="dis-price">1500 ks</p>
+            <div class="rating">
+              <img v-for = 'n in parseInt(1)' :key = 'n' :src="imgYes">
+              <img v-for = 'n in 5-parseInt(1)' :key ="n + 'i'" :src="imgNo">
+            </div>
           </div>
 
             <div
@@ -144,6 +176,10 @@
             </p>
             <p class="price">1000 ks</p>
             <p class="dis-price">1500 ks</p>
+            <div class="rating">
+              <img v-for = 'n in parseInt(3)' :key = 'n' :src="imgYes">
+              <img v-for = 'n in 5-parseInt(3)' :key ="n + 'i'" :src="imgNo">
+            </div>
           </div>
 
         </div>
@@ -163,6 +199,8 @@ export default {
   data() {
     return {
       seekImg:require('@/assets/images/sousuo@2x.png'),
+      imgNo:require('@/assets/xinxin.png'),
+      imgYes:require('@/assets/starrecom.png'),
     };
   },
   methods:{
@@ -197,7 +235,7 @@ export default {
 <style lang="less" scoped>
   .header{
     padding: 0 .2rem 0 .2rem;
-    background-color: #eac9eb;
+    background-color: #06306a;
     display: flex;
     .header_logo{  
       width: 3rem;
@@ -265,9 +303,17 @@ export default {
         flex: 0 0 auto;
         overflow: hidden;
         border-radius: 0.15rem;
+        background-color:#fff;
           .image{
             width: 100%;
             height: 100%;
+          }
+          .see-more{
+            font-size: .3rem;
+            text-align: center;
+            font-weight: bold;
+            color: #000;
+            margin: 1.3rem 0 0 0;
           }
       }
     }
@@ -326,15 +372,16 @@ export default {
 					.price{
 						color:#d02629;
 						font-size:.24rem;
-            padding-top:.1rem;		
-					}
-          .dis-price{
-						color:#303133;
-						font-size:.24rem;
-            padding:.1rem 0;
-            text-decoration: line-through;				
+            padding:.1rem 0 .15rem 0;		
 					}
 				}
+        .see-more{
+            font-size: .3rem;
+            text-align: center;
+            font-weight: bold;
+            color: #000;
+            margin: 2rem 0 0 0;
+          }
 			}
 		}
 	}
@@ -402,6 +449,13 @@ export default {
             text-decoration: line-through;				
 					}
 				}
+        .see-more{
+            font-size: .3rem;
+            text-align: center;
+            font-weight: bold;
+            color: #000;
+            margin: 2rem 0 0 0;
+          }
 			}
 		}
 	}
@@ -444,6 +498,21 @@ export default {
             align-self: center;
             border-bottom: 0.5px solid #f2f1f2;
           }
+          .promotion-discount{
+            z-index: 10;
+            margin: 0rem 0 0 2.75rem;
+            position: absolute;
+            .img{
+              width: 0.9rem;
+              height: 0.4rem;
+            }
+            .percent{
+              font-size: .24rem;
+              color: #fff;
+              z-index: 10;
+              margin: -0.4rem 0 0 0.2rem;
+            }
+          }
           .title {
             display: -webkit-box;
             overflow: hidden;
@@ -471,6 +540,14 @@ export default {
           padding:.2rem;
           text-decoration: line-through;				
 				}
+        .rating{
+          padding: 0 0 .2rem .2rem;
+          img{
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-right: 0.05rem;
+          }
+        }
       }
     }
   }
