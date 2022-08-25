@@ -155,7 +155,7 @@ export default {
 <style lang="less" scoped>
 .header{
     padding: 0 .2rem 0 .2rem;
-    background-color: #06306a;
+    background: linear-gradient(to right,#442e93 0,#25a5d8 100%);
     display: flex;
     .header_logo{  
       width: 3rem;
@@ -214,10 +214,11 @@ export default {
       padding:.2rem;
     }
     li.active {
-      border-left: 3px solid #06306a;
+      border-left: 3px solid #0d7199;
       box-sizing: border-box;
       background: #f2f2f2;
-      color: #06306a;
+      color: #0d7199;
+      font-weight: bold;
     }
     .category-img{
         width: 1.3rem;

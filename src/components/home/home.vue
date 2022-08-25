@@ -239,7 +239,8 @@ export default {
 <style lang="less" scoped>
   .header{
     padding: 0 .2rem 0 .2rem;
-    background-color: #06306a;
+    /* background-color: #327f9d; */
+    background: linear-gradient(to right,#442e93 0,#25a5d8 100%);
     display: flex;
     .header_logo{  
       width: 3rem;
@@ -290,7 +291,7 @@ export default {
       padding: .3rem .2rem;
       .name{
         font-size: .26rem;
-        color: #06306a;
+        color: #0d7199;
         font-weight: bold;
       }
     }
@@ -328,7 +329,7 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #06306a;
+        color: #0d7199;
         font-weight: bold;
       }		
 		}
@@ -376,7 +377,7 @@ export default {
 				.price-box{
 					padding:0 .2rem;
 					.price{
-						color:#d02629;
+						color:#ff6700;
 						font-size:.24rem;
             padding:.1rem 0 .15rem 0;		
 					}
@@ -397,7 +398,7 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #06306a;
+        color: #0d7199;
         font-weight: bold;
       }		
 		}
@@ -445,7 +446,7 @@ export default {
 				.price-box{
 					padding:0 .2rem;
 					.price{
-						color:#d02629;
+						color:#ff6700;
 						font-size:.24rem;
             padding-top:.1rem;		
 					}
@@ -490,7 +491,7 @@ export default {
         .title {
           text-align: center;
           font-size: 0.28rem;
-          color: #06306a;
+          color: #0d7199;
           font-weight: bold;
         }
       }
@@ -546,7 +547,7 @@ export default {
             margin-top: .1rem;
           }
         .price {
-          color: #d02629;
+          color: #ff6700;
           font-size: .24rem;
           padding: .1rem 0.2rem 0 .2rem;
         }
