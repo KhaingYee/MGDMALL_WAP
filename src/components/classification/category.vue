@@ -27,7 +27,7 @@
       <div class="content fr">
         <div class="tab-content-wrap">
             <div class="item-one">
-            <el-collapse accordion>
+            <el-collapse>
               <el-collapse-item :title="item.class_name" v-for="item in condata" :key="item.id">
                 <ul class="con clearfix" v-if="item.three">
                   <li class="fl" v-for="con in item.three" :key="con.id">

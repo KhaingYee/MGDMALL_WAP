@@ -91,6 +91,10 @@
                 <div class="price">15000 ks</div>
                 <div class="dis-price">15500 ks</div>
               </div>
+              <div class="rating">
+                <img v-for = 'n in parseInt(4)' :key = 'n' :src="imgYes">
+                <img v-for = 'n in 5-parseInt(4)' :key ="n + 'i'" :src="imgNo">
+              </div>
             </div>
             <div class="card">
               <div class="see-more">See More</div>
@@ -286,7 +290,8 @@ export default {
       padding: .3rem .2rem;
       .name{
         font-size: .26rem;
-        color: #000;
+        color: #06306a;
+        font-weight: bold;
       }
     }
     .store-cart{
@@ -323,7 +328,8 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #000;
+        color: #06306a;
+        font-weight: bold;
       }		
 		}
 		.cards{
@@ -391,7 +397,8 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #000;
+        color: #06306a;
+        font-weight: bold;
       }		
 		}
 		.cards{
@@ -449,12 +456,20 @@ export default {
             text-decoration: line-through;				
 					}
 				}
+        .rating{
+          padding: 0 0 .15rem .2rem;
+          img{
+            width: 0.3rem;
+            height: 0.3rem;
+            margin-right: 0.05rem;
+          }
+        }
         .see-more{
             font-size: .3rem;
             text-align: center;
             font-weight: bold;
             color: #000;
-            margin: 2rem 0 0 0;
+            margin: 2.5rem 0 0 0;
           }
 			}
 		}
@@ -475,7 +490,8 @@ export default {
         .title {
           text-align: center;
           font-size: 0.28rem;
-          color: #000;
+          color: #06306a;
+          font-weight: bold;
         }
       }
       .goods-box {
