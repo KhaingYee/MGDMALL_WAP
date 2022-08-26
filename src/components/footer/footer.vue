@@ -27,18 +27,18 @@ export default {
       isClass: sessionStorage.getItem("router_index"),
       tabbar: {
         isIcon: [
-          require("@/assets/images/sy.png"),
-          require("@/assets/images/fl.png"),
-          require("@/assets/images/fxh@2x.png"),
-          require("@/assets/images/gwc.png"),
-          require("@/assets/images/wd.png")
+          require("@/assets/images/HomeColor.png"),
+          require("@/assets/images/CategoriesColor.png"),
+          require("@/assets/images/MessageColor.png"),
+          require("@/assets/images/CartColor.png"),
+          require("@/assets/images/AccountColor.png")
         ],
         Icon: [
-          require("@/assets/images/home_icon.png"),
-          require("@/assets/images/class_icon.png"),
-          require("@/assets/images/fx@2x.png"),
-          require("@/assets/images/cart_icon.png"),
-          require("@/assets/images/per_icon.png")
+          require("@/assets/images/HomeBW.png"),
+          require("@/assets/images/CategoriesBW.png"),
+          require("@/assets/images/MessageBW.png"),
+          require("@/assets/images/CartBW.png"),
+          require("@/assets/images/AccountBW.png")
         ],
         font: ["Home", "Categories","Message", "Cart", "Account"]
       }
@@ -125,12 +125,13 @@ export default {
       }
       .icon.active {
         display: none;
-        border-top: 3px solid #d02629;
+        border-top: 3px solid #0d7199;
       }
     }
     li.isSelected {
       .font {
-        color: #d02629;
+        color: #0d7199;
+        font-weight:bold;
       }
       .icon.active {
         display: block;
@@ -142,32 +143,32 @@ export default {
     }
     li:nth-child(1) {
       img {
-        width: 0.39rem;
-        height: 0.37rem;
+        width: 0.5rem;
+        height: 0.5rem;
       }
     }
     li:nth-child(2) {
       img {
-        width: 0.43rem;
-        height: 0.32rem;
+        width: 0.5rem;
+        height: 0.5rem;
       }
     }
     li:nth-child(3) {
       img {
-        width: 0.43rem;
-        height: 0.41rem;
+        width: 0.5rem;
+        height: 0.5rem;
       }
     }
     li:nth-child(4) {
       img {
-        width: 0.6rem;
-        height: 0.4rem;
+        width: 0.5rem;
+        height: 0.5rem;
       }
     }
     li:nth-child(5) {
       img {
-        width: 0.35rem;
-        height: 0.4rem;
+        width: 0.5rem;
+        height: 0.5rem;
       }
     }
   }
