@@ -25,6 +25,38 @@
         </div>
         <div class="shop-name"><span>Shop Name :</span>&nbsp;ABC Store</div>
       </div>
+      <div class="specification">
+        <div class="selectColor">
+          <div class="title">Selected Color :<span class="name">&nbsp;Black</span></div>
+          <div class="spec-image">
+            <img class="show-image" src="../../assets/showlaptop.jpg"/>
+            <img class="show-image" src="../../assets/images/category.jpg"/>
+            <img class="show-image" src="../../assets/showlaptop.jpg"/>
+          </div>
+        </div>
+        <div class="site-chat">
+          <div class="title">Size :&nbsp;&nbsp;
+            <span class="name">32</span>
+            <span class="name">62</span>
+            <span class="name">77</span>
+          </div>
+        </div>
+        <div class="addQty">
+          <span class="pull-left">Quality :</span>&nbsp;&nbsp;&nbsp;
+          <div class="pull-right">
+            <div class="input-main fl clearfix">
+              <button @click="reduceRice">-</button>
+              <input type="text" class v-model="rice" @blur.prevent="minRice" />
+              <button class="rightB" @click="plusRcie">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="pro-footer">
+        <div class="buy-now">Buy Now</div>
+        <div class="add-cart">Add To Cart</div>
+      </div>
+      <div class="blance"></div>
     </div>
 </template>
 <script>
@@ -48,6 +80,7 @@
         ],
         imgNo:require('@/assets/xinxin.png'),
         imgYes:require('@/assets/starrecom.png'),
+        rice: 1,
         };
       },
       components: {
@@ -59,6 +92,13 @@
         },
         goLastPage() {
           this.$router.go(-1);
+        },
+        reduceRice() {
+          if (this.rice <= 1) return;
+          this.rice = (this.rice - 1);
+        },
+        plusRcie() {
+          this.rice = (Number(this.rice) + 1);
         },
       }
     };
@@ -108,7 +148,7 @@
       padding-top: 0.2rem;
       .new {
         color: #000;
-        font-size: 0.25rem;
+        font-size: 0.26rem;
         padding-left: 0.2rem;
         s {
           font-size: 0.24rem;
@@ -136,5 +176,125 @@
         font-weight:bold;
       }
     }
+  }
+  .specification{
+    background-color: #fff;
+  }
+  .selectColor{
+    background-color: #fff;
+    padding: .2rem;
+    .title{
+      font-size: .26rem;
+      color:#000;
+      .name{
+        font-size: .26rem;
+        color:#000;
+      }
+    }
+    .spec-image{
+      padding: .2rem .2rem 0 .2rem;
+      .show-image{
+        width: 1rem;
+        height: 1rem;
+        border: 0.05rem solid #f1f1f1;
+        margin-right:.05rem;
+      }
+    }
+  }
+  .site-chat{
+    background-color: #fff;
+    padding: 0.3rem 0.2rem;
+    .title{
+      font-size: .26rem;
+      color:#000;
+      .name{
+        font-size: .26rem;
+        color:#000;
+        background-color: #f1f1f1;
+        padding: .2rem;
+        margin-right: 0.05rem;
+      }
+    }
+  }
+  .addQty {
+    height: 1rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    padding: 0 .2rem;
+    .pull-left {
+      font-size: 0.26rem;
+      color: #000;
+    }
+
+    .pull-right {
+      .stock {
+        font-size: 0.24rem;
+        color: #aeadad;
+      }
+
+      .input-main {
+        height: 0.79rem;
+        border-radius: 5px;
+        overflow: hidden;
+        line-height: 0.79rem;
+        display: flex;
+        align-items: center;
+
+        button {
+          width: 0.7rem;
+          border: none;
+          font-size: 0.4rem;
+          line-height: 0.6rem;
+          outline: none;
+          height: 80%;
+          background: #f1f1f1;
+          color: #8b8b8b;
+        }
+        button:nth-child(1) {
+          margin-right: 0.2rem;
+        }
+
+        .rightB {
+          margin-left: 0.2rem;
+        }
+
+        input {
+          width: 1.45rem;
+          height: 80%;
+          border: 1px solid #f1f1f1;
+          text-align: center;
+          font-size: 0.4rem;
+          color: #000;
+        }
+      }
+    }
+  }
+  .pro-footer{
+    width: 100%;
+    height: 1rem;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    .buy-now{
+      width: 50%;
+      font-size: .26rem;
+      text-align: center;
+      background: -webkit-linear-gradient(left,#ff9f36,#ff6700);
+      line-height: 1rem;
+      color:#fff;
+    }
+    .add-cart{
+      width: 50%;
+      font-size: .26rem;
+      text-align: center;
+      background: linear-gradient(to right,#25a5d8 0,#442e93 100%);
+      line-height: 1rem;
+      color:#fff;
+    }
+  }
+  .blance{
+    height: 1.05rem;
+    background-color: #f1f1f1;
   }
 </style>
