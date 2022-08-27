@@ -52,6 +52,32 @@
           </div>
         </div>
       </div>
+      <div class="comment-display">
+        <div class="for_comment">
+            <span class="coupon_title">Customer Review&nbsp;&nbsp;(10)</span>
+            <span class="coupon_number"> See More</span>
+            <span class="btn-right"></span>
+        </div>
+        <div class="list-wrap" v-for="item in 2" :key="item">
+            <div class="list-hd">
+                <div class="pull-left">
+                    <img src="../../assets/my_user_pic.png">
+                    <span >kym</span>
+                </div>
+                <div class="list-purTimer">20.5.2022</div>
+                <div class="pull-right">
+                    <img v-for = 'n in parseInt(3)' :key = 'n' :src="imgYes">
+                    <img v-for = 'n in 5-parseInt(3)' :key ="n + 'i'" :src="imgNo">
+                </div>
+            </div>
+            <div class="list-com">goods item</div>
+            <div class="list-img-main clearfix">
+              <img src="../../assets/showlaptop.jpg"/>
+              <img src="../../assets/images/category.jpg"/>
+              <img src="../../assets/showlaptop.jpg"/>
+            </div>
+        </div>
+    </div>
       <div class="pro-footer">
         <div class="buy-now">Buy Now</div>
         <div class="add-cart">Add To Cart</div>
@@ -264,12 +290,115 @@
           height: 80%;
           border: 1px solid #f1f1f1;
           text-align: center;
-          font-size: 0.4rem;
+          font-size: 0.3rem;
           color: #000;
+          padding-left: 0.1rem;
         }
       }
     }
   }
+  .comment-display{
+    margin-top: .08rem;
+    .for_comment {
+        padding: 0 0.5rem 0 0.2rem;
+        min-height: 0.8rem;
+        line-height: 0.8rem;
+        font-size: 0.3rem;
+        color: #777;
+        position: relative;
+        background: #fff;
+        border-top: 1px solid #f1f1f1;
+        .coupon_title {
+          font-size: .26rem;
+          color: #777;
+        }
+        .coupon_number {
+          float:right;
+          padding-right: .05rem; 
+          font-size: .26rem;
+        }
+        .btn-right {
+          position: absolute;
+          right: 0.2rem;
+          top: 50%;
+          margin-top: -0.15rem;
+          width: 0.16rem;
+          height: 0.3rem;
+          background: url(../../assets/btn-right.png) no-repeat;
+          background-size: 100% 100%;
+        }
+    }
+    .list-com{
+        height:1rem;
+        font-size:.24rem;
+        color:#333;
+        display: -webkit-box;
+        overflow: hidden;
+        white-space: normal!important;
+        text-overflow: ellipsis;
+        word-wrap: break-word;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+    .list-wrap{
+      width:7.1rem;
+      padding:0 .2rem;
+      height:3rem;
+      background:#fff;
+      margin-bottom:.1rem;
+      .list-hd{
+          padding:.2rem 0;
+          line-height:.32rem;
+          height:.3rem;
+          display: flex;
+          .pull-left{
+              padding-left:.46rem;
+              font-size:.2rem;
+              color:#b0b0b0;
+              position:relative;
+              img{
+                  width:.32rem;
+                  height:.32rem;
+                  position:absolute;
+                  left:0;
+                  top:0;
+              }
+          }
+          .pull-right{
+              color:#999;
+              font-size:.26rem;
+              right: .2rem;
+              position: absolute;
+              img{
+                  width: 23/100rem;
+              }
+          }
+          .list-purTimer{
+            font-size:.21rem;
+            color:#999;
+            margin: 0.05rem 0 0 .2rem;
+          }
+      }
+      .list-img-main{
+          height:1rem;
+          width: 18%;
+          display: flex;
+          img{
+              width:1rem;
+              height:1rem;
+              margin-right:.2rem;
+              transform: scale(1);           
+              transition: all ease 0.5s;    
+          }
+          img.active {
+              transform: scale(5);         
+              position: absolute;           
+              z-index: 100;
+              margin-left: 3rem;
+          }
+      }
+    }
+}
   .pro-footer{
     width: 100%;
     height: 1rem;
