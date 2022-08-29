@@ -26,6 +26,23 @@
 
     <!-- 快捷链接加快讯 -->
     <news-flash></news-flash>
+    <div class="flash-sale">
+      <div class="title">
+        <div class="name">Flash Sale</div>
+        <div class="more">See More</div>
+      </div>
+      <div class="cards">
+          <div class="card" v-for="good in 3" :key="good">
+            <div class="card-image">
+              <img src="" />
+            </div>
+            <div class="price-box">
+              <span class="price">1000 ks</span>
+              <span>5 sold</span>
+            </div>
+          </div>		
+      </div>
+    </div>
     <div class="store-shops">
       <div class="title">
         <div class="name">Store Shop</div>
@@ -194,7 +211,7 @@
 </template>
 <script>
 import NewsFlash from "./children/newsFlash";
-import toTop from "@/components/home/top"; 
+import toTop from "@/mobile/components/home/top"; 
 import { Indicator, Toast, MessageBox, Popup } from "mint-ui";
 import QS from "qs";
 import { mapState, mapGetters, mapActions } from 'vuex'
@@ -202,9 +219,9 @@ export default {
   name: "home",
   data() {
     return {
-      seekImg:require('@/assets/images/sousuo@2x.png'),
-      imgNo:require('@/assets/xinxin.png'),
-      imgYes:require('@/assets/starrecom.png'),
+      seekImg:require('@/mobile/assets/images/sousuo@2x.png'),
+      imgNo:require('@/mobile/assets/xinxin.png'),
+      imgYes:require('@/mobile/assets/starrecom.png'),
     };
   },
   methods:{
@@ -286,6 +303,57 @@ export default {
     width: 100%;
     text-align: center;
   }
+  .flash-sale{
+		.title{
+			display:flex;
+			justify-content: space-between;
+			padding:.3rem .2rem;
+			.name{
+        font-size: .26rem;
+        color: #000;
+      }	
+      .more{
+        font-size: .24rem;
+      }		
+		}
+		.cards{
+			display: flex;
+			flex-direction: row;
+			padding:0 .2rem;
+			flex-wrap: nowrap;
+			.card{
+				width:2.2rem;
+				flex: 0 0 auto;
+				background:white;
+				margin-right:.2rem;
+				overflow: hidden;
+				.card-image{
+					width:2.2rem;
+					height:2.2rem;
+					opacity:1 !important;
+					img{
+						width:100%;
+						height:100%;
+						
+					}
+					background-color: #f0f0f0;
+				}
+				.price-box{
+					display: flex;
+					justify-content: space-between;
+					padding:.2rem;
+					color:#909399;
+					font-size: .16rem;
+					align-items: center;
+					.price{
+						color:#da3632;
+						font-size:.24rem;
+						
+					}
+				}
+			}
+		}
+	}
   .store-shops{
     .title{
       padding: .3rem .2rem;

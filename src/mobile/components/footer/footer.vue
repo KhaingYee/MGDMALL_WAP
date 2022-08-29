@@ -27,18 +27,18 @@ export default {
       isClass: sessionStorage.getItem("router_index"),
       tabbar: {
         isIcon: [
-          require("@/assets/images/HomeColor.png"),
-          require("@/assets/images/CategoriesColor.png"),
-          require("@/assets/images/MessageColor.png"),
-          require("@/assets/images/CartColor.png"),
-          require("@/assets/images/AccountColor.png")
+          require("@/mobile/assets/images/HomeColor.png"),
+          require("@/mobile/assets/images/CategoriesColor.png"),
+          require("@/mobile/assets/images/MessageColor.png"),
+          require("@/mobile/assets/images/CartColor.png"),
+          require("@/mobile/assets/images/AccountColor.png")
         ],
         Icon: [
-          require("@/assets/images/HomeBW.png"),
-          require("@/assets/images/CategoriesBW.png"),
-          require("@/assets/images/MessageBW.png"),
-          require("@/assets/images/CartBW.png"),
-          require("@/assets/images/AccountBW.png")
+          require("@/mobile/assets/images/HomeBW.png"),
+          require("@/mobile/assets/images/CategoriesBW.png"),
+          require("@/mobile/assets/images/MessageBW.png"),
+          require("@/mobile/assets/images/CartBW.png"),
+          require("@/mobile/assets/images/AccountBW.png")
         ],
         font: ["Home", "Categories","Message", "Cart", "Account"]
       }

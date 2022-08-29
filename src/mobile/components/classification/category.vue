@@ -48,46 +48,46 @@ export default {
   name: "category",
   data() {
     return {
-        seekImg:require('@/assets/images/sousuo@2x.png'),
+        seekImg:require('@/mobile/assets/images/sousuo@2x.png'),
         data: [
             {   "id":1,
                 "class_name":"Electronic",
-                "pic_url":require('@/assets/images/category.jpg')
+                "pic_url":require('@/mobile/assets/images/category.jpg')
             },
 
             {   "id":2,
                 "class_name":"BathRoom",
-                "pic_url":require('@/assets/images/c2.png')
+                "pic_url":require('@/mobile/assets/images/c2.png')
             },
 
             {   "id":3,
                 "class_name":"Ceramic Tile and Accessories",
-                "pic_url":require('@/assets/cate.jpg')
+                "pic_url":require('@/mobile/assets/cate.jpg')
             },
         ],
         condata: [
         {"id":4,
         "class_name":"Phone",
         "three":[
-            {"id":5,"class_name":"iPhone","pic_url":require('@/assets/images/category.jpg'),"fid":4},
-            {"id":6,"class_name":"Samsung","pic_url":require('@/assets/images/category.jpg'),"fid":4},
-            {"id":7,"class_name":"Xiaomi","pic_url":require('@/assets/images/category.jpg'),"fid":4},
+            {"id":5,"class_name":"iPhone","pic_url":require('@/mobile/assets/images/category.jpg'),"fid":4},
+            {"id":6,"class_name":"Samsung","pic_url":require('@/mobile/assets/images/category.jpg'),"fid":4},
+            {"id":7,"class_name":"Xiaomi","pic_url":require('@/mobile/assets/images/category.jpg'),"fid":4},
             ],},
 
             {"id":8,
         "class_name":"Mouse",
         "three":[
-            {"id":9,"class_name":"HCJM","pic_url":require('@/assets/sonymouse.jpg'),"fid":8},
-            {"id":10,"class_name":"Wireless","pic_url":require('@/assets/showmouse.jpg'),"fid":8},
-            {"id":11,"class_name":"Logitech","pic_url":require('@/assets/showmouse.jpg'),"fid":8},
+            {"id":9,"class_name":"HCJM","pic_url":require('@/mobile/assets/sonymouse.jpg'),"fid":8},
+            {"id":10,"class_name":"Wireless","pic_url":require('@/mobile/assets/showmouse.jpg'),"fid":8},
+            {"id":11,"class_name":"Logitech","pic_url":require('@/mobile/assets/showmouse.jpg'),"fid":8},
             ],},
 
             {"id":21,
         "class_name":"Laptop",
         "three":[
-            {"id":22,"class_name":"Asus","pic_url":require('@/assets/showlaptop.jpg'),"fid":21},
-            {"id":23,"class_name":"Dell","pic_url":require('@/assets/showlaptop.jpg'),"fid":21},
-            {"id":34,"class_name":"Acer","pic_url":require('@/assets/showlaptop.jpg'),"fid":21},
+            {"id":22,"class_name":"Asus","pic_url":require('@/mobile/assets/showlaptop.jpg'),"fid":21},
+            {"id":23,"class_name":"Dell","pic_url":require('@/mobile/assets/showlaptop.jpg'),"fid":21},
+            {"id":34,"class_name":"Acer","pic_url":require('@/mobile/assets/showlaptop.jpg'),"fid":21},
             ],},
         ],
         status: 1,

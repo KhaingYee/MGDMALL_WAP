@@ -2,13 +2,13 @@ import Vue from 'vue'
 import App from '@/App'
 import Router from 'vue-router'
 
-const Home = r => require(['@/components/home/home'], r);
-const category = r => require(['@/components/classification/category'], r);
-const messenger = r => require(['@/components/message/messenger'], r);
-const cart = r => require(['@/components/cart/cart'], r);
-const personal = r => require(['@/components/personal/personal'], r);
-const product = r => require(['@/components/product/productDetail'], r);
-const subject = r => require(['@/components/subject'], r);
+const Home = r => require(['@/mobile/components/home/home'], r);
+const category = r => require(['@/mobile/components/classification/category'], r);
+const messenger = r => require(['@/mobile/components/message/messenger'], r);
+const cart = r => require(['@/mobile/components/cart/cart'], r);
+const personal = r => require(['@/mobile/components/personal/personal'], r);
+const product = r => require(['@/mobile/components/product/productDetail'], r);
+const subject = r => require(['@/mobile/components/subject'], r);
 
 Vue.use(Router)
 const router = new Router({

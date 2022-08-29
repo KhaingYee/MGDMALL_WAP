@@ -93,19 +93,19 @@
           currentImgSlideIndex:0,
           images: [
             { 
-              "pic_url":require('@/assets/showlaptop.jpg')
+              "pic_url":require('@/mobile/assets/showlaptop.jpg')
             },
 
             {  
-              "pic_url":require('@/assets/images/category.jpg')
+              "pic_url":require('@/mobile/assets/images/category.jpg')
             },
 
             { 
-              "pic_url":require('@/assets/showlaptop.jpg')
+              "pic_url":require('@/mobile/assets/showlaptop.jpg')
             },
         ],
-        imgNo:require('@/assets/xinxin.png'),
-        imgYes:require('@/assets/starrecom.png'),
+        imgNo:require('@/mobile/assets/xinxin.png'),
+        imgYes:require('@/mobile/assets/starrecom.png'),
         rice: 1,
         };
       },
