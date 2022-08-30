@@ -117,8 +117,8 @@ import wx from 'weixin-js-sdk'
 Vue.prototype.$wx = wx;
 
 //wechat
-import VueWeChatShare from 'vue-wechat-share'
-Vue.use(VueWeChatShare)
+// import VueWeChatShare from 'vue-wechat-share'
+// Vue.use(VueWeChatShare)
 
 import OtpInput from "@bachdgvn/vue-otp-input";
 Vue.component("v-otp-input", OtpInput);
@@ -161,14 +161,11 @@ router.beforeEach((to, from, next) => {
         case 'category':
             sessionStorage.setItem('router_index', 1);
             break;
-        case 'messenger':
+        case 'cart':
             sessionStorage.setItem('router_index', 2);
             break;
-        case 'cart':
-            sessionStorage.setItem('router_index', 3);
-            break;
         case 'personal':
-            sessionStorage.setItem('router_index', 4);
+            sessionStorage.setItem('router_index', 3);
             break;
     };
     next();

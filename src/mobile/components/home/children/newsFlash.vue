@@ -74,11 +74,12 @@ import qs from "qs"
             width:1.62rem;
             height: 2.5rem;
             float: left;
-            margin-right: 0.2rem;
+            margin-right: 0.15rem;
             margin-top: 0.2rem;
             overflow: hidden;
             background-color: #fff;
             border-radius:.1rem;
+            border: 0.01rem solid #0985b6;
         }
         .index_Ctrl_auto .link:nth-child(4n){
             margin-right: 0;

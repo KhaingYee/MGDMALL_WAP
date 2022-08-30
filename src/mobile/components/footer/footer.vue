@@ -29,18 +29,16 @@ export default {
         isIcon: [
           require("@/mobile/assets/images/HomeColor.png"),
           require("@/mobile/assets/images/CategoriesColor.png"),
-          require("@/mobile/assets/images/MessageColor.png"),
           require("@/mobile/assets/images/CartColor.png"),
           require("@/mobile/assets/images/AccountColor.png")
         ],
         Icon: [
           require("@/mobile/assets/images/HomeBW.png"),
           require("@/mobile/assets/images/CategoriesBW.png"),
-          require("@/mobile/assets/images/MessageBW.png"),
           require("@/mobile/assets/images/CartBW.png"),
           require("@/mobile/assets/images/AccountBW.png")
         ],
-        font: ["Home", "Categories","Message", "Cart", "Account"]
+        font: ["Home", "Categories", "Cart", "Account"]
       }
     };
   },
@@ -59,15 +57,10 @@ export default {
           break;
         case 2:
           this.$router.push({
-              path: "/messenger"
-          });
-          break; 
-        case 3:
-          this.$router.push({
             path: "/cart"
           });
           break;
-        case 4:
+        case 3:
           this.$router.push({
             path: "/personal"
           });
@@ -100,7 +93,7 @@ export default {
     box-shadow: border-box;
     z-index: 99999999;
     li {
-      width: 20%;
+      width: 25%;
       text-align: center;
 
       .font {

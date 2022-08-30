@@ -34,7 +34,7 @@
       <div class="cards">
           <div class="card" v-for="good in 3" :key="good">
             <div class="card-image">
-              <img src="" />
+              <img src="../../assets/images/c2.png" />
             </div>
             <div class="price-box">
               <span class="price">1000 ks</span>
@@ -45,7 +45,9 @@
     </div>
     <div class="store-shops">
       <div class="title">
-        <div class="name">Store Shop</div>
+        <div class="name">Store Shop
+          <!-- <i class="fa-solid fa-shop"></i> -->
+        </div>
       </div>
       <div class="store-cart">
         <div class="cart">
@@ -310,26 +312,29 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #000;
+        color: #0d7199;
+        font-weight: bold;
       }	
       .more{
         font-size: .24rem;
+        color:#ff6700;
       }		
 		}
 		.cards{
 			display: flex;
 			flex-direction: row;
-			padding:0 .2rem;
+			padding:0 0 0 .2rem;
 			flex-wrap: nowrap;
 			.card{
-				width:2.2rem;
+				width:2.24rem;
 				flex: 0 0 auto;
 				background:white;
 				margin-right:.2rem;
 				overflow: hidden;
+        border-radius: 0.1rem;
 				.card-image{
-					width:2.2rem;
-					height:2.2rem;
+					width:2.24rem;
+					height:2.24rem;
 					opacity:1 !important;
 					img{
 						width:100%;
@@ -342,11 +347,11 @@ export default {
 					display: flex;
 					justify-content: space-between;
 					padding:.2rem;
-					color:#909399;
+					color:#999;
 					font-size: .16rem;
 					align-items: center;
 					.price{
-						color:#da3632;
+						color:#ff6700;
 						font-size:.24rem;
 						
 					}
@@ -528,9 +533,9 @@ export default {
         .rating{
           padding: 0 0 .15rem .2rem;
           img{
-            width: 0.3rem;
-            height: 0.3rem;
-            margin-right: 0.05rem;
+            width: 0.25rem;
+            height: 0.25rem;
+            margin-right: 0.04rem;
           }
         }
         .see-more{
@@ -628,9 +633,9 @@ export default {
         .rating{
           padding: 0 0 .2rem .2rem;
           img{
-            width: 0.3rem;
-            height: 0.3rem;
-            margin-right: 0.05rem;
+            width: 0.25rem;
+            height: 0.25rem;
+            margin-right: 0.04rem;
           }
         }
       }
