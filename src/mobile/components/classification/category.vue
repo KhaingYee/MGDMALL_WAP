@@ -6,7 +6,7 @@
           <img src="../../assets/images/MGD_Logo_Text.png" class="header_logo"/>
         </div>
         <div class="header_seek">
-            <img class="header_seek_img" :src="seekImg">
+          <i class="fa-solid fa-magnifying-glass" id="header_seek_img"></i>
             <form action="javascript:void(0);">
                 <input type="search" placeholder="Search Category...">
             </form>
@@ -183,13 +183,13 @@ export default {
       color:#fff;
       margin: 0 !important;
       }
-      .header_seek_img{
+      #header_seek_img{
         position: absolute;
-        top:0.35rem;
-        left: 3.65rem;
+        top: 0.37rem;
+        left: 3.67rem;
         display: block;
-        width: 0.26rem;
-        height: 0.27rem;
+        font-size: .27rem;
+        color: #777;
       }   
       .header_seek input::-webkit-input-placeholder{
         color: #999;

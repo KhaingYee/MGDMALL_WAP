@@ -7,7 +7,7 @@
         @click="tab(0)"
       >
         <div class="icon">
-          <i class="fa-solid fa-house" id="iconimg"></i>
+          <i class="fa-solid fa-house" style="color: #555;" id="iconimg"></i>
         </div>
         <div class="icon active">
           <i class="fa-solid fa-house" style="color: #0d7199;" id="iconimg"></i>
@@ -20,7 +20,7 @@
         @click="tab(1)"
       >
         <div class="icon">
-          <i class="fa-solid fa-list" id="iconimg"></i>
+          <i class="fa-solid fa-list" style="color: #555;" id="iconimg"></i>
         </div>
         <div class="icon active">
           <i class="fa-solid fa-list" style="color: #0d7199;" id="iconimg"></i>
@@ -33,7 +33,7 @@
         @click="tab(2)"
       >
         <div class="icon">
-          <i class="fa-solid fa-cart-shopping" id="iconimg"></i>
+          <i class="fa-solid fa-cart-shopping" style="color: #555;" id="iconimg"></i>
         </div>
         <div class="icon active">
           <i class="fa-solid fa-cart-shopping" style="color: #0d7199;" id="iconimg"></i>
@@ -46,7 +46,7 @@
         @click="tab(3)"
       >
         <div class="icon">
-          <i class="fa-solid fa-user" id="iconimg"></i>
+          <i class="fa-solid fa-user" style="color: #555;" id="iconimg"></i>
         </div>
         <div class="icon active">
           <i class="fa-solid fa-user" style="color: #0d7199;" id="iconimg"></i>
