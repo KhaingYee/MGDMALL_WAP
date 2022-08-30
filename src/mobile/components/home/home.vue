@@ -29,6 +29,13 @@
     <div class="flash-sale">
       <div class="title">
         <div class="name">Flash Sale</div>
+        <div class="end-time">
+          <div class="block hour">{{showTimeH}}</div>
+           <div class="aa">:</div>
+          <div class="block minute">{{showTimeM}}</div>
+           <div class="aa">:</div>
+          <div class="block second">{{showTimes}}</div>
+        </div>
         <div class="more">See More</div>
       </div>
       <div class="cards">
@@ -224,14 +231,39 @@ export default {
       seekImg:require('@/mobile/assets/images/sousuo@2x.png'),
       imgNo:require('@/mobile/assets/xinxin.png'),
       imgYes:require('@/mobile/assets/starrecom.png'),
+      showTimeH:'00',
+      showTimeM:'00',
+      showTimes:'00',
+      countDownTime:0,
     };
+  },
+  created(){
+    this.countDownTime = '23451';
+    this.countDownTimer();
   },
   methods:{
     goToProduct(){
       this.$router.push({
         path: "/product"
       });
-    }
+    },
+    countDownTimer() {
+      if(this.countDownTime > 0) {
+          setTimeout(() => {
+              this.countDownTime -= 1;
+              var h = Math.floor(this.countDownTime / 3600);
+              var m = Math.floor(this.countDownTime % 3600 / 60);
+              var s = Math.floor(this.countDownTime % 3600 % 60);
+              var hDisplay = h < 10 ?  "0" + h : h;
+              var mDisplay = m < 10 ?  "0" + m : m;
+              var sDisplay = s < 10 ?  "0" + s : s;
+              this.showTimeH = hDisplay;
+              this.showTimeM = mDisplay;
+              this.showTimes = sDisplay;
+              this.countDownTimer()
+          }, 1000)
+      }
+    },
   },
   components: {
     NewsFlash,
@@ -306,9 +338,11 @@ export default {
     text-align: center;
   }
   .flash-sale{
+    background-color: #fff;
+    margin-top: .3rem;
+    padding-bottom: .3rem;
 		.title{
 			display:flex;
-			justify-content: space-between;
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
@@ -318,7 +352,29 @@ export default {
       .more{
         font-size: .24rem;
         color:#ff6700;
-      }		
+        right: .2rem;
+        position: absolute;
+      }	
+      .end-time{
+				display: flex;
+				color:#909399;
+				align-items: center;
+        margin-left: .1rem;
+				.block{
+					width:.4rem;
+					height:.4rem;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					border-radius: .1rem;
+					color:white;
+					background-color: #0d7199;
+				}
+        .aa{
+          color: #0d7199;
+          padding: 0 .05rem;
+        }
+			}	
 		}
 		.cards{
 			display: flex;
@@ -329,9 +385,10 @@ export default {
 				width:2.24rem;
 				flex: 0 0 auto;
 				background:white;
-				margin-right:.2rem;
-				overflow: hidden;
+        margin-right: 0.13rem;
+        overflow: hidden;
         border-radius: 0.1rem;
+        border: 0.02rem solid #f1f1f1;
 				.card-image{
 					width:2.24rem;
 					height:2.24rem;

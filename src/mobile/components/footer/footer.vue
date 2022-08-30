@@ -3,18 +3,55 @@
     <ul class="footer clearfix">
       <li
         class="fl"
-        :class="{isSelected:index == parseInt(isClass)}"
-        v-for="(item,index) in tabbar.font"
-        :key="item.id"
-        @click="tab(index)"
+        :class="{isSelected:0 == parseInt(isClass)}"
+        @click="tab(0)"
       >
         <div class="icon">
-          <img :src="tabbar.Icon[index]" />
+          <i class="fa-solid fa-house" id="iconimg"></i>
         </div>
         <div class="icon active">
-          <img :src="tabbar.isIcon[index]" />
+          <i class="fa-solid fa-house" style="color: #0d7199;" id="iconimg"></i>
         </div>
-        <div class="font">{{item}}</div>
+        <div class="font">Home</div>
+      </li>
+      <li
+        class="fl"
+        :class="{isSelected:1 == parseInt(isClass)}"
+        @click="tab(1)"
+      >
+        <div class="icon">
+          <i class="fa-solid fa-list" id="iconimg"></i>
+        </div>
+        <div class="icon active">
+          <i class="fa-solid fa-list" style="color: #0d7199;" id="iconimg"></i>
+        </div>
+        <div class="font">Category</div>
+      </li>
+      <li
+        class="fl"
+        :class="{isSelected:2 == parseInt(isClass)}"
+        @click="tab(2)"
+      >
+        <div class="icon">
+          <i class="fa-solid fa-cart-shopping" id="iconimg"></i>
+        </div>
+        <div class="icon active">
+          <i class="fa-solid fa-cart-shopping" style="color: #0d7199;" id="iconimg"></i>
+        </div>
+        <div class="font">Cart</div>
+      </li>
+      <li
+        class="fl"
+        :class="{isSelected:3 == parseInt(isClass)}"
+        @click="tab(3)"
+      >
+        <div class="icon">
+          <i class="fa-solid fa-user" id="iconimg"></i>
+        </div>
+        <div class="icon active">
+          <i class="fa-solid fa-user" style="color: #0d7199;" id="iconimg"></i>
+        </div>
+        <div class="font">Account</div>
       </li>
     </ul>
   </div>
@@ -25,21 +62,6 @@ export default {
   data() {
     return {
       isClass: sessionStorage.getItem("router_index"),
-      tabbar: {
-        isIcon: [
-          require("@/mobile/assets/images/HomeColor.png"),
-          require("@/mobile/assets/images/CategoriesColor.png"),
-          require("@/mobile/assets/images/CartColor.png"),
-          require("@/mobile/assets/images/AccountColor.png")
-        ],
-        Icon: [
-          require("@/mobile/assets/images/HomeBW.png"),
-          require("@/mobile/assets/images/CategoriesBW.png"),
-          require("@/mobile/assets/images/CartBW.png"),
-          require("@/mobile/assets/images/AccountBW.png")
-        ],
-        font: ["Home", "Categories", "Cart", "Account"]
-      }
     };
   },
   methods: {
@@ -107,13 +129,14 @@ export default {
         position: relative;
         display: block;
         border-top: 3px solid #313133;
-        img {
+        #iconimg {
           position: absolute;
           left: 0;
           top: 6;
           bottom: 0;
           right: 0;
           margin: auto;
+          font-size:.4rem;
         }
       }
       .icon.active {
@@ -134,36 +157,36 @@ export default {
         display: none;
       }
     }
-    li:nth-child(1) {
-      img {
+    /* li:nth-child(1) {
+      #img {
         width: 0.5rem;
         height: 0.5rem;
       }
     }
     li:nth-child(2) {
-      img {
+      #img {
         width: 0.5rem;
         height: 0.5rem;
       }
     }
     li:nth-child(3) {
-      img {
+      #img {
         width: 0.5rem;
         height: 0.5rem;
       }
     }
     li:nth-child(4) {
-      img {
+      #img {
         width: 0.5rem;
         height: 0.5rem;
       }
     }
     li:nth-child(5) {
-      img {
+      #img {
         width: 0.5rem;
         height: 0.5rem;
       }
-    }
+    } */
   }
 }
 </style>
