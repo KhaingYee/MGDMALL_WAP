@@ -108,10 +108,6 @@
               <div class="card-image">
                 <img src="../../assets/cate.jpg" />
               </div>
-              <!-- <div class="promotion-discount">
-                <img src="../../assets/Promo .png" class="img"/>
-                <div class="percent">-33%</div>
-              </div> -->
               <div class="title">Blue label and Spy Red Wine Cooler 4X275Ml</div>
               <div class="price-box">
                 <div class="price">15000 ks</div>
@@ -140,7 +136,6 @@
           >
             <img src="../../assets/images/c1.png"/>
             <div class="promotion-discount">
-              <img src="../../assets/Promo .png" class="img"/>
               <div class="percent">-33%</div>
             </div>
             <p class="title">
@@ -162,7 +157,6 @@
           >
             <img src="../../assets/cate.jpg"/>
             <div class="promotion-discount">
-              <img src="../../assets/Promo .png" class="img"/>
               <div class="percent">-20%</div>
             </div>
             <p class="title">
@@ -646,17 +640,16 @@ export default {
           }
           .promotion-discount{
             z-index: 10;
-            margin: 0rem 0 0 2.75rem;
+            margin: 0rem 0 0 2.87rem;
             position: absolute;
-            .img{
-              width: 0.9rem;
-              height: 0.4rem;
-            }
             .percent{
               font-size: .24rem;
               color: #fff;
               z-index: 10;
-              margin: -0.4rem 0 0 0.2rem;
+              padding:.1rem;
+              background: #0d7199;
+              border-bottom-left-radius: 0.5rem;
+              border-top-left-radius: 0.5rem;
             }
           }
           .title {

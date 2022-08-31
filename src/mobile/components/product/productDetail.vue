@@ -26,29 +26,13 @@
         <div class="shop-name"><span>Shop Name :</span>&nbsp;ABC Store</div>
       </div>
       <div class="specification">
-        <div class="selectColor">
-          <div class="title">Selected Color :<span class="name">&nbsp;Black</span></div>
+        <div class="selectColor" @click="selectpro">
+          <div class="title">Selected Color :<span class="name">&nbsp;Black</span>
+            <i class="fa-solid fa-angle-right" id="btn-right"></i></div>
           <div class="spec-image">
             <img class="show-image" src="../../assets/showlaptop.jpg"/>
             <img class="show-image" src="../../assets/images/category.jpg"/>
             <img class="show-image" src="../../assets/showlaptop.jpg"/>
-          </div>
-        </div>
-        <div class="site-chat">
-          <div class="title">Size :&nbsp;&nbsp;
-            <span class="name">32</span>
-            <span class="name">62</span>
-            <span class="name">77</span>
-          </div>
-        </div>
-        <div class="addQty">
-          <span class="pull-left">Quality :</span>&nbsp;&nbsp;&nbsp;
-          <div class="pull-right">
-            <div class="input-main fl clearfix">
-              <button @click="reduceRice">-</button>
-              <input type="text" class v-model="rice" @blur.prevent="minRice" />
-              <button class="rightB" @click="plusRcie">+</button>
-            </div>
           </div>
         </div>
       </div>
@@ -56,7 +40,7 @@
         <div class="for_comment">
             <span class="coupon_title">Customer Review&nbsp;&nbsp;(10)</span>
             <span class="coupon_number"> See More</span>
-            <span class="btn-right"></span>
+            <i class="fa-solid fa-angle-right" id="btn-right"></i>
         </div>
         <div class="list-wrap" v-for="item in 2" :key="item">
             <div class="list-hd">
@@ -83,9 +67,60 @@
         <div class="add-cart">Add To Cart</div>
       </div>
       <div class="blance"></div>
+      <mt-popup
+        v-model="popupVisible"
+        position="bottom">
+       <div class="popbox">
+        <div class="show-product">
+          <img src="../../assets/images/c2.png"/>
+          <div class="detail">
+            <div class="price-box">
+              <span class="price">1000 ks</span>
+              <span class="dis-price">1500 ks</span>
+            </div>
+            <div class="color">green</div>
+            <div class="size">32</div>
+          </div>
+          <i class="fa-solid fa-circle-xmark" id="cross" @click="close"></i>
+        </div>
+        <div class="specification">
+          <div class="selectColor" @click="selectpro">
+            <div class="title">Selected Color</div>
+            <div class="spec-image">
+              <img class="show-image" src="../../assets/showlaptop.jpg"/>
+              <img class="show-image" src="../../assets/images/category.jpg"/>
+              <img class="show-image" src="../../assets/showlaptop.jpg"/>
+            </div>
+          </div>
+          <div class="site-chat">
+            <div class="title">Size :&nbsp;&nbsp;
+              <span class="name">32</span>
+              <span class="name">62</span>
+              <span class="name">77</span>
+            </div>
+          </div>
+          <div class="addQty">
+            <span class="pull-left">Quality :</span>&nbsp;&nbsp;&nbsp;
+            <div class="pull-right">
+              <div class="input-main fl clearfix">
+                <button @click="reduceRice">-</button>
+                <input type="text" class v-model="rice" @blur.prevent="minRice" />
+                <button class="rightB" @click="plusRcie">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="pro-footer">
+          <div class="buy-now">Buy Now</div>
+          <div class="add-cart">Add To Cart</div>
+        </div>
+       </div>
+    </mt-popup>
     </div>
 </template>
+
 <script>
+  import { Popup } from 'mint-ui';
     export default {
       name: "home",
       data() {
@@ -107,6 +142,7 @@
         imgNo:require('@/mobile/assets/xinxin.png'),
         imgYes:require('@/mobile/assets/starrecom.png'),
         rice: 1,
+        popupVisible:false,
         };
       },
       components: {
@@ -126,6 +162,12 @@
         plusRcie() {
           this.rice = (Number(this.rice) + 1);
         },
+        selectpro(){
+          this.popupVisible=true;
+        },
+        close(){
+          this.popupVisible=false;
+        }
       }
     };
 </script>
@@ -216,6 +258,12 @@
         font-size: .26rem;
         color:#000;
       }
+      #btn-right {
+        position: absolute;
+        right: 0.2rem;
+        font-size: .3rem; 
+        color: #999;      
+      }
     }
     .spec-image{
       padding: .2rem .2rem 0 .2rem;
@@ -229,7 +277,8 @@
   }
   .site-chat{
     background-color: #fff;
-    padding: 0.3rem 0.2rem;
+    padding: 0.5rem 0.2rem;
+    border-bottom: 0.04rem solid #f1f1f1;
     .title{
       font-size: .26rem;
       color:#000;
@@ -248,6 +297,7 @@
     display: flex;
     align-items: center;
     padding: 0 .2rem;
+    justify-content: space-between;
     .pull-left {
       font-size: 0.26rem;
       color: #000;
@@ -317,15 +367,12 @@
           padding-right: .05rem; 
           font-size: .26rem;
         }
-        .btn-right {
+        #btn-right {
           position: absolute;
           right: 0.2rem;
-          top: 50%;
-          margin-top: -0.15rem;
-          width: 0.16rem;
-          height: 0.3rem;
-          background: url(../../assets/btn-right.png) no-repeat;
-          background-size: 100% 100%;
+          top: .26rem;
+          font-size: .3rem;  
+          color: #999;     
         }
     }
     .list-com{
@@ -425,5 +472,49 @@
   .blance{
     height: 1.05rem;
     background-color: #f1f1f1;
+  }
+  .popbox{
+    width: 7.5rem;
+    height: 10rem;
+    .show-product{
+      display: flex;
+      padding: 0.3rem 0 0.3rem 0.3rem;
+      border-bottom: 0.04rem solid #f1f1f1;
+      img{
+        width: 1.8rem;
+        height: 1.8rem;
+        border-radius: 0.1rem;
+      }
+      .detail{
+        margin-left: .2rem;
+        .price-box{
+          line-height: .5rem;
+          .price{
+            font-size: .3rem;
+            color: #ff6700;
+          }
+          .dis-price{
+            font-size: .26rem;
+            color: #999;
+            margin-left: .2rem;
+            text-decoration: line-through;
+          }
+        }
+        .color{
+          font-size: .26rem;
+          line-height: .5rem;
+        }
+        .size{
+          font-size: .26rem;
+          line-height: .5rem;
+        }
+      }
+      #cross{
+        font-size: .45rem;
+        color: #777;
+        right: 0.2rem;
+        position: absolute;
+      }
+    }
   }
 </style>
