@@ -48,7 +48,6 @@ export default {
   name: "category",
   data() {
     return {
-        seekImg:require('@/mobile/assets/images/sousuo@2x.png'),
         data: [
             {   "id":1,
                 "class_name":"Electronic",
