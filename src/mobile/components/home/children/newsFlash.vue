@@ -6,7 +6,7 @@
         </div>
       <div class="index_Ctrl_auto">
           <span class="link">
-              <img src="../../../assets/cate.jpg"/>
+              <img src="../../../assets/images/c1.png"/>
               <span> Ceramic Tile</span>
           </span>
           <span class="link">
@@ -18,7 +18,7 @@
             <span>This is the electronic accessories</span>
         </span>
         <span class="link">
-            <img src="../../../assets/cate.jpg"/>
+            <img src="../../../assets/images/c1.png"/>
             <span> Ceramic Tile</span>
         </span>
         <span class="link">
@@ -52,6 +52,8 @@ import qs from "qs"
            width: 100%;
            overflow: hidden;
            margin-top: 3.49rem;
+           background: #fff;
+           padding-bottom: 0.2rem;
            .title{
 			    padding:.3rem .2rem .1rem .2rem;
                 .name{
@@ -79,7 +81,7 @@ import qs from "qs"
             overflow: hidden;
             background-color: #fff;
             border-radius:.1rem;
-            border: 0.01rem solid #0985b6;
+            /* border: 0.01rem solid #0985b6; */
         }
         .index_Ctrl_auto .link:nth-child(4n){
             margin-right: 0;

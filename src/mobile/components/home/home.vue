@@ -80,6 +80,27 @@
     <div>
       <div class="goods_new">
         <div class="title">
+          <div class="name">New Arrivals</div>
+        </div>
+        <div class="cards">
+            <div class="card" v-for="good in 6" :key="good">
+              <div class="card-image">
+                <img src="../../assets/images/c1.png" />
+              </div>
+              <div class="title">K-Lite Rechargeable 5W Led Torch Light Kl-7131</div>
+              <div class="price-box">
+                <div class="price">10000 ks</div>
+              </div>
+            </div>	
+            <div class="card">
+              <div class="see-more">See More</div>
+            </div>	
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="goods_new">
+        <div class="title">
           <div class="name">Popular Product</div>
         </div>
         <div class="cards">
@@ -332,8 +353,8 @@ export default {
   }
   .flash-sale{
     background-color: #fff;
-    margin-top: .3rem;
-    padding-bottom: .3rem;
+    margin-top: .2rem;
+    padding-bottom: .25rem;
 		.title{
 			display:flex;
 			padding:.3rem .2rem;
