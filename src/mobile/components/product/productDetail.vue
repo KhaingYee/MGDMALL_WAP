@@ -62,6 +62,81 @@
             </div>
         </div>
     </div>
+    <div class="Question">
+      <div class="fortitle">
+        <span class="title">Question for this product&nbsp;&nbsp;(10)</span>
+        <span class="more"> See More</span>
+        <i class="fa-solid fa-angle-right" id="btn-right"></i>      
+      </div>
+      <div class="all-qa">
+        <div class="write-q">
+          <i class="fa-solid fa-message" id="qicon"><span class="text">Q</span></i>
+          <div class="ques">
+            <div class="wq">stock shi lar</div>
+            <div class="show-detail">
+              <span class="name">kym</span>
+              <span class="date">20.10.2022</span>
+            </div>
+          </div>
+        </div>
+        <div class="write-a">
+          <i class="fa-solid fa-message" id="qicon"><span class="text">A</span></i>
+          <div class="ques">
+            <div class="wq">shi tal</div>
+            <div class="show-detail">
+              <span class="name">admin</span>
+              <span class="date">20.10.2022</span>
+            </div>
+          </div>
+        </div>
+        <div class="write-q">
+          <i class="fa-solid fa-message" id="qicon"><span class="text">Q</span></i>
+          <div class="ques">
+            <div class="wq">what is this</div>
+            <div class="show-detail">
+              <span class="name">user</span>
+              <span class="date">21.10.2022</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btn-next" @click="gotoquestion">Ask Question</div>
+    </div>
+    <div class="related">
+      <div class="title">Related Product</div>
+      <div class="all-card">
+        <div class="card" v-for="r in 6" :key="r">
+          <img src="../../assets/showlaptop.jpg" class="image" />
+          <div class="price">1000 ks</div>
+        </div>
+      </div>
+    </div>
+    <ul class="floor">
+      <li class="floor-item">
+        <div class="top">
+          <div class="title">Same Store</div>
+        </div>
+        <div class="goods-box">
+          <div
+          :key="all"
+          class="floor-goods"
+          v-for="all in 6"
+          @click="goToProduct()"
+        >
+          <img src="../../assets/cate.jpg"/>
+          <p class="title">
+            Blue label and Spy Red Wine Cooler
+          </p>
+          <p class="price">1000 ks</p>
+          <p class="dis-price">1500 ks</p>
+          <div class="rating">
+            <img v-for = 'n in parseInt(3)' :key = 'n' :src="imgYes">
+            <img v-for = 'n in 5-parseInt(3)' :key ="n + 'i'" :src="imgNo">
+          </div>
+        </div>
+        </div>
+      </li>
+    </ul>
       <div class="pro-footer">
         <div class="buy-now">Buy Now</div>
         <div class="add-cart">Add To Cart</div>
@@ -122,7 +197,7 @@
 <script>
   import { Popup } from 'mint-ui';
     export default {
-      name: "home",
+      name: "product",
       data() {
         return {
           currentImgSlideIndex:0,
@@ -167,6 +242,11 @@
         },
         close(){
           this.popupVisible=false;
+        },
+        gotoquestion(){
+          this.$router.push({
+            path:"/question"
+          })
         }
       }
     };
@@ -348,7 +428,7 @@
     }
   }
   .comment-display{
-    margin-top: .08rem;
+    margin-top: .1rem;
     .for_comment {
         padding: 0 0.5rem 0 0.2rem;
         min-height: 0.8rem;
@@ -357,7 +437,6 @@
         color: #777;
         position: relative;
         background: #fff;
-        border-top: 1px solid #f1f1f1;
         .coupon_title {
           font-size: .26rem;
           color: #777;
@@ -393,6 +472,7 @@
       height:3rem;
       background:#fff;
       margin-bottom:.1rem;
+      margin-top: -0.01rem;
       .list-hd{
           padding:.2rem 0;
           line-height:.32rem;
@@ -446,6 +526,205 @@
       }
     }
 }
+.Question{
+  margin-top: .1rem;
+  background-color: #fff;
+  padding-bottom: 0.2rem;
+    .fortitle {
+        padding: 0 0.5rem 0 0.2rem;
+        min-height: 0.8rem;
+        line-height: 0.8rem;
+        font-size: 0.3rem;
+        color: #777;
+        position: relative;
+        background: #fff;
+        .title {
+          font-size: .26rem;
+          color: #777;
+        }
+        .more {
+          float:right;
+          padding-right: .05rem; 
+          font-size: .26rem;
+        }
+        #btn-right {
+          position: absolute;
+          right: 0.2rem;
+          top: .26rem;
+          font-size: .3rem;  
+          color: #999;     
+        }
+    }
+    .all-qa{
+      .write-q{
+        display: flex;
+        padding: 0.2rem;
+        #qicon{
+          font-size: .3rem;
+          color:#0d7199;
+          line-height: .5rem;
+          .text{
+            color: #fff;
+            position: absolute;
+            font-size: .2rem;
+            margin: -0.01rem 0 0 -0.24rem;
+          }
+        }
+        .ques{
+          margin-left: .2rem;
+          .wq{
+            font-size: .26rem;
+          }
+          .show-detail{
+            .name{
+              font-size: .24rem;
+              color:#777;
+            }
+            .date{
+              font-size: .22rem;
+              color: #777;
+              margin-left: .1rem;
+            }
+          }
+        }
+      }
+      .write-a{
+        display: flex;
+        padding: 0.2rem;
+        #qicon{
+          font-size: .3rem;
+          color:#ff6700;
+          line-height:.5rem;
+          .text{
+            color: #fff;
+            position: absolute;
+            font-size: .2rem;
+            margin: -0.025rem 0 0 -0.22rem;
+          }
+        }
+        .ques{
+          margin-left: .2rem;
+          .wq{
+            font-size: .26rem;
+          }
+          .show-detail{
+            .name{
+              font-size: .24rem;
+              color:#777;
+            }
+            .date{
+              font-size: .22rem;
+              color: #777;
+              margin-left: .1rem;
+            }
+          }
+        }
+      }
+    }
+    .btn-next{
+      font-size: .26rem;
+      text-align: center;
+      border: 0.01rem solid #ff6700;
+      width: 2rem;
+      height: 0.5rem;
+      line-height: .45rem;
+      margin: 0.1rem auto 0 auto;
+      color: #ff6700;
+    }
+  }
+  .floor {
+    background-color: #f2f1f2;
+    box-sizing: border-box;
+    .floor-item {
+      background-color: #f2f1f2;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      .top {
+        background-color: #f2f1f2;
+        width: 100%;
+        padding: .3rem 0.2rem 0.2rem 0.2rem;
+        overflow: hidden;
+        .title {
+          text-align: center;
+          font-size: 0.28rem;
+          color: #0d7199;
+          font-weight: bold;
+        }
+      }
+      .goods-box {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .floor-goods {
+          margin-top: 2%;
+          background-color: #fff;
+          width: 49%;
+          float: left;
+          box-sizing: border-box;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          img {
+            width: 100%;
+            height: 3.658rem;
+            align-self: center;
+            border-bottom: 0.5px solid #f2f1f2;
+          }
+          .promotion-discount{
+            z-index: 10;
+            margin: 0rem 0 0 2.87rem;
+            position: absolute;
+            .percent{
+              font-size: .24rem;
+              color: #fff;
+              z-index: 10;
+              padding:.1rem;
+              background: #0d7199;
+              border-bottom-left-radius: 0.5rem;
+              border-top-left-radius: 0.5rem;
+            }
+          }
+          .title {
+            display: -webkit-box;
+            overflow: hidden;
+            white-space: normal !important;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            color: #000;
+            height: .8rem;
+            line-height: .4rem;
+            text-align: left;
+            padding: 0 0.2rem;
+            font-size: .26rem;
+            margin-top: .1rem;
+          }
+        .price {
+          color: #ff6700;
+          font-size: .24rem;
+          padding: .1rem 0.2rem 0 .2rem;
+        }
+        .dis-price{
+          color:#303133;
+          font-size:.24rem;
+          padding:.2rem;
+          text-decoration: line-through;				
+				}
+        .rating{
+          padding: 0 0 .2rem .2rem;
+          img{
+            width: 0.25rem;
+            height: 0.25rem;
+            margin-right: 0.04rem;
+          }
+        }
+      }
+    }
+  }
+  }
   .pro-footer{
     width: 100%;
     height: 1rem;
@@ -514,6 +793,43 @@
         color: #777;
         right: 0.2rem;
         position: absolute;
+      }
+    }
+  }
+  .related{
+    background-color: #fff;
+    margin-top: 0.1rem;
+    padding-bottom: 0.3rem;
+    .title{
+      font-size: .26rem;
+      padding: 0.3rem .2rem .1rem .2rem;
+      color: #0d7199;
+      font-weight: bold;
+    }
+    .all-card{
+      display: flex;
+      justify-content: flex-start;
+      flex-direction: row;
+      flex-wrap: wrap;
+      padding: 0 .2rem;
+      .card{
+        width: 2.2rem;
+        margin: 0.2rem 0.2rem 0 0;
+        .image{
+          width: 2.2rem;
+          height: 2.2rem;
+        }
+        .price{
+          font-size: .26rem;
+          text-align: center;
+          color: #ff6700;
+        }
+      }
+      .card:nth-child(3){
+        margin-right: 0;
+      }
+      .card:nth-child(6){
+        margin-right: 0;
       }
     }
   }

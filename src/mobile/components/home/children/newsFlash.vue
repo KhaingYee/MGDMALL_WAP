@@ -73,7 +73,7 @@ import qs from "qs"
          }
          .index_Ctrl_auto .link{
             display: block;
-            width:1.62rem;
+            width:1.66rem;
             height: 2.5rem;
             float: left;
             margin-right: 0.15rem;
@@ -87,8 +87,8 @@ import qs from "qs"
             margin-right: 0;
         }
         .index_Ctrl_auto .link img{
-            width: 1.62rem;
-            height: 1.62rem;
+            width: 1.66rem;
+            height: 1.66rem;
             display: block;    
         }
         .index_Ctrl_auto .link span{

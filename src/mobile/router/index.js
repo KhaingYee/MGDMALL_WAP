@@ -8,6 +8,7 @@ const messenger = r => require(['@/mobile/components/message/messenger'], r);
 const cart = r => require(['@/mobile/components/cart/cart'], r);
 const personal = r => require(['@/mobile/components/personal/personal'], r);
 const product = r => require(['@/mobile/components/product/productDetail'], r);
+const question = r => require(['@/mobile/components/product/question'], r);
 const subject = r => require(['@/mobile/components/subject'], r);
 
 Vue.use(Router)
@@ -61,6 +62,11 @@ const router = new Router({
                 path: '/product',
                 name: 'product',
                 component: product
+            },
+            {
+                path: '/question',
+                name: 'question',
+                component: question
             },
 
         ]
