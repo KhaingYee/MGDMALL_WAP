@@ -39,7 +39,7 @@
         <div class="more">See More</div>
       </div>
       <div class="cards">
-          <div class="card" v-for="good in 3" :key="good">
+          <div class="card" v-for="flash in 3" :key="flash">
             <div class="card-image">
               <img src="../../assets/images/c2.png" />
             </div>
@@ -83,7 +83,7 @@
           <div class="name">New Arrivals</div>
         </div>
         <div class="cards">
-            <div class="card" v-for="good in 6" :key="good">
+            <div class="card" v-for="arrival in 6" :key="arrival">
               <div class="card-image">
                 <img src="../../assets/images/c1.png" />
               </div>
@@ -104,7 +104,7 @@
           <div class="name">Popular Product</div>
         </div>
         <div class="cards">
-            <div class="card" v-for="good in 6" :key="good">
+            <div class="card" v-for="popular in 6" :key="popular">
               <div class="card-image">
                 <img src="../../assets/images/c2.png" />
               </div>
@@ -125,7 +125,7 @@
           <div class="name">Promotion Product</div>
         </div>
         <div class="cards">
-            <div class="card" v-for="good in 6" :key="good">
+            <div class="card" v-for="promotion in 6" :key="promotion">
               <div class="card-image">
                 <img src="../../assets/cate.jpg" />
               </div>
@@ -135,8 +135,8 @@
                 <div class="dis-price">15500 ks</div>
               </div>
               <div class="rating">
-                <img v-for = 'n in parseInt(4)' :key = 'n' :src="imgYes">
-                <img v-for = 'n in 5-parseInt(4)' :key ="n + 'i'" :src="imgNo">
+                <img v-for = 'p in parseInt(4)' :key = 'p' :src="imgYes">
+                <img v-for = 'p in 5-parseInt(4)' :key ="p + 'i'" :src="imgNo">
               </div>
             </div>
             <div class="card">
@@ -165,8 +165,8 @@
             <p class="price">1000 ks</p>
             <p class="dis-price">1500 ks</p>
             <div class="rating">
-              <img v-for = 'n in parseInt(4)' :key = 'n' :src="imgYes">
-              <img v-for = 'n in 5-parseInt(4)' :key ="n + 'i'" :src="imgNo">
+              <img v-for = 'j in parseInt(4)' :key = 'j' :src="imgYes">
+              <img v-for = 'j in 5-parseInt(4)' :key ="j + 'i'" :src="imgNo">
             </div>
           </div>
 
@@ -186,47 +186,10 @@
             <p class="price">1000 ks</p>
             <p class="dis-price">1500 ks</p>
             <div class="rating">
-              <img v-for = 'n in parseInt(3)' :key = 'n' :src="imgYes">
-              <img v-for = 'n in 5-parseInt(3)' :key ="n + 'i'" :src="imgNo">
+              <img v-for = 'a in parseInt(3)' :key = 'a' :src="imgYes">
+              <img v-for = 'a in 5-parseInt(3)' :key ="a + 'i'" :src="imgNo">
             </div>
           </div>
-
-            <div
-            :key="all"
-            class="floor-goods"
-            v-for="all in 2"
-            @click="goToProduct()"
-          >
-            <img src="../../assets/images/c2.png"/>
-            <p class="title">
-              Bathroom accessories and ceramic Tile charge
-            </p>
-            <p class="price">1000 ks</p>
-            <p class="dis-price">1500 ks</p>
-            <div class="rating">
-              <img v-for = 'n in parseInt(1)' :key = 'n' :src="imgYes">
-              <img v-for = 'n in 5-parseInt(1)' :key ="n + 'i'" :src="imgNo">
-            </div>
-          </div>
-
-            <div
-            :key="all"
-            class="floor-goods"
-            v-for="all in 2"
-            @click="goToProduct()"
-          >
-            <img src="../../assets/cate.jpg"/>
-            <p class="title">
-              Blue label and Spy Red Wine Cooler
-            </p>
-            <p class="price">1000 ks</p>
-            <p class="dis-price">1500 ks</p>
-            <div class="rating">
-              <img v-for = 'n in parseInt(3)' :key = 'n' :src="imgYes">
-              <img v-for = 'n in 5-parseInt(3)' :key ="n + 'i'" :src="imgNo">
-            </div>
-          </div>
-
         </div>
       </li>
     </ul>

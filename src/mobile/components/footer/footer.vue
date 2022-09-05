@@ -157,36 +157,7 @@ export default {
         display: none;
       }
     }
-    /* li:nth-child(1) {
-      #img {
-        width: 0.5rem;
-        height: 0.5rem;
-      }
-    }
-    li:nth-child(2) {
-      #img {
-        width: 0.5rem;
-        height: 0.5rem;
-      }
-    }
-    li:nth-child(3) {
-      #img {
-        width: 0.5rem;
-        height: 0.5rem;
-      }
-    }
-    li:nth-child(4) {
-      #img {
-        width: 0.5rem;
-        height: 0.5rem;
-      }
-    }
-    li:nth-child(5) {
-      #img {
-        width: 0.5rem;
-        height: 0.5rem;
-      }
-    } */
+
   }
 }
 </style>

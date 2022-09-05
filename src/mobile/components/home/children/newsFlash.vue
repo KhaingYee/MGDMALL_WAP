@@ -34,6 +34,7 @@
     </div>
 </template>
 <script>
+import axios from 'axios'
 import qs from "qs"
     export default {
         name: 'newsflash',
@@ -42,6 +43,23 @@ import qs from "qs"
 
             }
         },
+        
+        methods:{
+            Category() {
+                this.axios.get(this.$httpConfig.getCategory,{
+                })
+                .then(res => {
+                   
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+            },
+            
+        },
+        mounted (){
+            this.Category();
+        }
     }
 </script>
 <style lang="less" scoped>
