@@ -42,8 +42,7 @@ import qs from "qs"
             return {
 
             }
-        },
-        
+        },       
         methods:{
             Category() {
                 this.axios.get(this.$httpConfig.getCategory,{

@@ -16,6 +16,12 @@ import MintUI from 'mint-ui'
 import VueClipboard from 'vue-clipboard2';
 Vue.use(VueClipboard);
 
+import LottieAnimation from 'lottie-web-vue'
+Vue.use(LottieAnimation);
+new Vue({
+    LottieAnimation,
+}).$mount('#app')
+
 import GoogleLogin from 'vue-google-login';
 Vue.use(GoogleLogin)
 
