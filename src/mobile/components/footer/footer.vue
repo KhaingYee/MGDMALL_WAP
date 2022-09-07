@@ -141,12 +141,12 @@ export default {
       }
       .icon.active {
         display: none;
-        border-top: 3px solid #0d7199;
+        border-top: 3px solid @second-color;
       }
     }
     li.isSelected {
       .font {
-        color: #0d7199;
+        color: @second-color;
         font-weight:bold;
       }
       .icon.active {

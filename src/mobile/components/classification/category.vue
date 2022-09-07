@@ -213,10 +213,10 @@ export default {
       padding:.2rem;
     }
     li.active {
-      border-left: 3px solid #0d7199;
+      border-left: 3px solid @second-color;
       box-sizing: border-box;
       background: #f2f2f2;
-      color: #0d7199;
+      color: @second-color;
       font-weight: bold;
     }
     .category-img{

@@ -75,7 +75,7 @@ import qs from "qs"
 			    padding:.3rem .2rem .1rem .2rem;
                 .name{
                     font-size: .26rem;
-                    color: #014E40;
+                    color: @main-color;
                     font-weight: bold;
                 }		
 		    }

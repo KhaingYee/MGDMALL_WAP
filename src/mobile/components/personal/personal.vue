@@ -194,7 +194,7 @@ import qs from "qs";
         .order-title{
             font-size: .28rem;
             padding: .2rem;
-            color: #014E40;
+            color: @main-color;
             font-weight:bold;
         }
         .nav-link {
@@ -218,7 +218,7 @@ import qs from "qs";
                 }
                 p {
                     font-size: 0.24rem;
-                    color: #343434;
+                    color: @product-title;
                 }
             }
         }
@@ -231,7 +231,7 @@ import qs from "qs";
         .order-title{
             font-size: .28rem;
             padding: .2rem;
-            color: #014E40;
+            color: @main-color;
             font-weight:bold;
         }
         .nav-link {
@@ -255,7 +255,7 @@ import qs from "qs";
                 }
                 p {
                     font-size: 0.24rem;
-                    color: #343434;
+                    color: @product-title;
                 }
             }
         }
@@ -268,7 +268,7 @@ import qs from "qs";
         .order-title{
             font-size: .28rem;
             padding: .2rem .2rem 0 .2rem;
-            color: #014E40;
+            color: @main-color;
             font-weight:bold;
         }
         .nav-link {
@@ -292,7 +292,7 @@ import qs from "qs";
                 }
                 p {
                     font-size: 0.24rem;
-                    color: #343434;
+                    color: @product-title;
                 }
             }
         }
@@ -318,7 +318,7 @@ import qs from "qs";
             margin-left: 0.2rem;
             .hello{
                 font-size: 0.3rem;
-                color: #014E40;
+                color: @main-color;
                 font-weight: bold; 
                 margin-top: 0.1rem; 
             }
@@ -326,7 +326,7 @@ import qs from "qs";
                 margin-top: 0.2rem;
                 .usernamestyle {
                     font-size: 0.3rem;
-                    color: #014E40;
+                    color: @main-color;
                     font-weight: bold;
                 }
             }
@@ -335,7 +335,7 @@ import qs from "qs";
                 text-align: center;
                 border-radius: 0.2rem;
                 font-size: .24rem;
-                background: #FE7021;
+                background: @price-color;
                 color: #fff;
                 width: 2.5rem;
                 height: 0.5rem;

@@ -151,34 +151,23 @@
           <div class="title">Just For You</div>
         </div>
         <div class="goods-box">
-          <div
-            class="floor-goods"
-            @click="goToProduct()"
-          >
-            <img src="../../assets/images/c1.png"/>
-            <div class="promotion-discount">
-              <div class="percent">-33%</div>
-            </div>
-            <p class="title">
-              Ceramic Tile Slide charge (10*10) and ceramic Tile charge
-            </p>
-            <p class="price">1000 ks</p>
-            <p class="dis-price">1500 ks</p>
-            <div class="rating">
-              <img v-for = 'j in parseInt(4)' :key = 'j' :src="imgYes">
-              <img v-for = 'j in 5-parseInt(4)' :key ="j + 'i'" :src="imgNo">
-            </div>
-          </div>
-
             <div
             :key="all"
             class="floor-goods"
-            v-for="all in 2"
+            v-for="all in 5"
             @click="goToProduct()"
           >
-            <img src="../../assets/cate.jpg"/>
-            <div class="promotion-discount">
-              <div class="percent">-20%</div>
+            <img src="../../assets/images/c1.png"/>
+            <div class="promotion-discountt">
+              <div class="percent">20</div>
+              <div class="loti">
+                <lottie-animation
+                    ref="anim"
+                    :animationData="require('@/mobile/assets/percent.json')"
+                    :loop="true"
+                    class="lotimg"
+                />
+             </div>
             </div>
             <p class="title">
               Blue label and Spy Red Wine Cooler
@@ -197,6 +186,7 @@
   </div>
 </template>
 <script>
+import LottieAnimation from 'lottie-web-vue'
 import NewsFlash from "./children/newsFlash";
 import toTop from "@/mobile/components/home/top"; 
 import { Indicator, Toast, MessageBox, Popup } from "mint-ui";
@@ -244,7 +234,8 @@ export default {
   },
   components: {
     NewsFlash,
-    toTop
+    toTop,
+    LottieAnimation
   }
 };
 </script>
@@ -323,12 +314,12 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #014E40;
+        color: @main-color;
         font-weight: bold;
       }	
       .more{
         font-size: .24rem;
-        color:#FE7021;
+        color:@price-color;
         right: .2rem;
         position: absolute;
       }	
@@ -345,10 +336,10 @@ export default {
 					align-items: center;
 					border-radius: .1rem;
 					color:white;
-					background-color: #014E40;
+					background-color: @main-color;
 				}
         .aa{
-          color: #014E40;
+          color: @main-color;
           padding: 0 .05rem;
         }
 			}	
@@ -385,11 +376,11 @@ export default {
 					font-size: .16rem;
 					align-items: center;
 					.price{
-						color:#FE7021;
+						color:@price-color;
 						font-size:.24rem;
 					}
           .sold{
-						color:#343434;
+						color:@product-title;
 						font-size:.24rem;
 					}
 				}
@@ -401,7 +392,7 @@ export default {
       padding: .3rem .2rem;
       .name{
         font-size: .26rem;
-        color: #014E40;
+        color: @main-color;
         font-weight: bold;
       }
     }
@@ -439,7 +430,7 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #014E40;
+        color: @main-color;
         font-weight: bold;
       }		
 		}
@@ -469,7 +460,7 @@ export default {
 					background-color: #f0f0f0;
 				}
 				.title{
-          color: #343434;
+          color: @product-title;
           padding: .1rem .2rem;
           font-size: .24rem;
           display: -webkit-box;
@@ -487,7 +478,7 @@ export default {
 				.price-box{
 					padding:0 .2rem;
 					.price{
-						color:#FE7021;
+						color:@price-color;
 						font-size:.24rem;
             padding:.1rem 0 .15rem 0;		
 					}
@@ -496,7 +487,7 @@ export default {
             font-size: .3rem;
             text-align: center;
             font-weight: bold;
-            color: #343434;
+            color: @product-title;
             margin: 2rem 0 0 0;
           }
 			}
@@ -508,7 +499,7 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #014E40;
+        color: @main-color;
         font-weight: bold;
       }		
 		}
@@ -538,7 +529,7 @@ export default {
 					background-color: #f0f0f0;
 				}
 				.title{
-          color: #343434;
+          color: @product-title;
           padding: .1rem .2rem;
           font-size: .24rem;
           display: -webkit-box;
@@ -556,7 +547,7 @@ export default {
 				.price-box{
 					padding:0 .2rem;
 					.price{
-						color:#FE7021;
+						color:@price-color;
 						font-size:.24rem;
             padding-top:.1rem;		
 					}
@@ -579,7 +570,7 @@ export default {
             font-size: .3rem;
             text-align: center;
             font-weight: bold;
-            color: #343434;
+            color: @product-title;
             margin: 2.5rem 0 0 0;
           }
 			}
@@ -601,7 +592,7 @@ export default {
         .title {
           text-align: center;
           font-size: 0.28rem;
-          color: #014E40;
+          color: @main-color;
           font-weight: bold;
         }
       }
@@ -625,18 +616,30 @@ export default {
             align-self: center;
             border-bottom: 0.5px solid #f2f1f2;
           }
-          .promotion-discount{
+          .promotion-discountt{
             z-index: 10;
-            margin: 0rem 0 0 2.87rem;
+            margin: 0rem 0 0 2.5rem;
             position: absolute;
+            display: flex;
+            background-color: @main-color;
+            border-bottom-left-radius: 0.5rem;
+            border-top-left-radius: 0.5rem;
             .percent{
-              font-size: .24rem;
+              font-size: .3rem;
               color: #fff;
               z-index: 10;
-              padding:.1rem;
-              background: #014E40;
-              border-bottom-left-radius: 0.5rem;
-              border-top-left-radius: 0.5rem;
+              height: 0.5rem;
+              line-height: 0.5rem;
+              margin: 0.05rem 0 0 0;
+              padding-left:.2rem;
+            }
+            .loti{
+              width: .6rem;
+              height: .6rem;
+              .lotimg{
+                width: 100%;
+                height:100%;
+              }
             }
           }
           .title {
@@ -647,7 +650,7 @@ export default {
             word-wrap: break-word;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            color: #343434;
+            color: @product-title;
             height: .8rem;
             line-height: .4rem;
             text-align: left;
@@ -656,7 +659,7 @@ export default {
             margin-top: .1rem;
           }
         .price {
-          color: #FE7021;
+          color: @price-color;
           font-size: .24rem;
           padding: .1rem 0.2rem 0 .2rem;
         }

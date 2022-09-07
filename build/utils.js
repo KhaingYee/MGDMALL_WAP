@@ -19,7 +19,28 @@ exports.cssLoaders = function (options) {
       sourceMap: options.sourceMap
     }
   }
-
+  function lessResourceLoader() { // 增加全局使用less函数
+    var loaders = [
+      cssLoader,
+      'less-loader',
+      {
+        loader: 'sass-resources-loader',
+        options: {
+          resources: [
+            path.resolve(__dirname, '../src/style/_color.less'), //定义全局变量的文件路径
+          ]
+        }
+      }
+    ];
+    if (options.extract) {
+      return ExtractTextPlugin.extract({
+        use: loaders,
+        fallback: 'vue-style-loader'
+      })
+    } else {
+      return ['vue-style-loader'].concat(loaders)
+    }
+  }
   // generate loader string to be used with extract text plugin
   function generateLoaders (loader, loaderOptions) {
     var loaders = [cssLoader]
@@ -48,7 +69,7 @@ exports.cssLoaders = function (options) {
   return {
     css: generateLoaders(),
     postcss: generateLoaders(),
-    less: generateLoaders('less'),
+    less: lessResourceLoader(),
     sass: generateLoaders('sass', { indentedSyntax: true }),
     scss: generateLoaders('sass'),
     stylus: generateLoaders('stylus'),

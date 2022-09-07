@@ -10,7 +10,7 @@
       <div class="describe">
         <p class="description-fn">Acer Aspire 3 ( A314 ) ( Celeron ) Electric Blue Color, Laptop, Notebook, Office Laptop, Online Learning Laptop</p>
         <p class="price">
-          <span style="color:#ff6700;font-size:.36rem">
+          <span style="color:#FE7021;font-size:.36rem">
           15000 ks
           </span>
           <span class="new">
@@ -320,7 +320,7 @@
       color: #000;
       span{
         font-size: .26rem;
-        color: #0d7199;
+        color: @second-color;
         font-weight:bold;
       }
     }
@@ -648,7 +648,7 @@
         .title {
           text-align: center;
           font-size: 0.28rem;
-          color: #0d7199;
+          color: @second-color;
           font-weight: bold;
         }
       }
@@ -694,7 +694,7 @@
             word-wrap: break-word;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            color: #000;
+            color: @product-title;
             height: .8rem;
             line-height: .4rem;
             text-align: left;
@@ -703,7 +703,7 @@
             margin-top: .1rem;
           }
         .price {
-          color: #ff6700;
+          color: @price-color;
           font-size: .24rem;
           padding: .1rem 0.2rem 0 .2rem;
         }
@@ -770,7 +770,7 @@
           line-height: .5rem;
           .price{
             font-size: .3rem;
-            color: #ff6700;
+            color: @price-color;
           }
           .dis-price{
             font-size: .26rem;
@@ -803,7 +803,7 @@
     .title{
       font-size: .26rem;
       padding: 0.3rem .2rem .1rem .2rem;
-      color: #0d7199;
+      color: @second-color;
       font-weight: bold;
     }
     .all-card{
@@ -822,7 +822,7 @@
         .price{
           font-size: .26rem;
           text-align: center;
-          color: #ff6700;
+          color: @price-color;
         }
       }
       .card:nth-child(3){

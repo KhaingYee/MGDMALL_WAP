@@ -27,6 +27,7 @@
     "myanmar-phonenumber": "^0.3.2",
     "qrcodejs2": "0.0.2",
     "qs": "^6.5.1",
+    "sass-resources-loader": "^2.2.5",
     "schema-utils": "^0.3.0",
     "vue": "^2.4.2",
     "vue-awesome-swiper": "^2.4.0",

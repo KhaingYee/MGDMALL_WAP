@@ -150,14 +150,14 @@ import qs from "qs";
             font-size: .26rem;
             left: 0.9rem;
             position: absolute;
-            color: #014E40;
+            color: @main-color;
             font-weight: bold;
         }
         .delete{
             font-size: .26rem;
             right: 0.2rem;
             position: absolute;
-            color: #014E40;
+            color: @main-color;
             font-weight: bold;
         }
   }
@@ -209,7 +209,7 @@ import qs from "qs";
         width: 4.6rem;
         height: 0.65rem;
         font-size: 0.24rem;
-        color: #343434;
+        color: @product-title;
         line-height: 0.32rem;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -218,7 +218,7 @@ import qs from "qs";
       }
         .price {
             font-size: 0.26rem;
-            color: #FE7021;
+            color: @price-color;
         }
         .old-price {
             font-size: 0.24rem;
