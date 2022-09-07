@@ -4,10 +4,18 @@
             <i class="fa-solid fa-circle-chevron-left" id="backbtn" @click="back"></i>
             <div class="title">Account</div>
         </div>
-        <!-- <lottie-animation
-            ref="anim"
-            :animationData="require('@/mobile/assets/drive.json')"
-        /> -->
+        <div class="login-header">
+            <div class="icon-wrap">
+                <img src="../../assets/profile.png"/>
+            </div>
+            <div class="iconContent">
+                <div class="hello">Hello, Welcome to MGD MALL!</div>
+                <!-- <div class="approval-div">
+                    <span class="usernamestyle">0995465673</span>
+                </div> -->
+                <div class="signbut">Login / Sign Up</div>
+            </div>
+        </div>
         <div class="navserver1">
             <div class="order-title">My Order</div>
             <ul class="nav-link">
@@ -182,7 +190,7 @@ import qs from "qs";
     .navserver1 {
         width: 100%;
         background: white;
-        padding: .1rem 0;
+        padding-bottom: .1rem;
         .order-title{
             font-size: .28rem;
             padding: .2rem;
@@ -218,8 +226,8 @@ import qs from "qs";
     .navserver2{
         width: 100%;
         background: white;
-        padding: .1rem 0;
         margin-top: 0.1rem;
+        padding-bottom: .1rem;
         .order-title{
             font-size: .28rem;
             padding: .2rem;
@@ -235,7 +243,7 @@ import qs from "qs";
             li {
                 width: 25%;
                 text-align: center;
-                padding: .2rem 0;
+                padding: 0 0 .2rem 0;
                 .icon-wrap {
                     height: 0.6rem;
                     .lot{
@@ -255,8 +263,8 @@ import qs from "qs";
     .navserver3{
         width: 100%;
         background: white;
-        padding: .1rem 0;
         margin-top: 0.1rem;
+        padding-bottom: .1rem;
         .order-title{
             font-size: .28rem;
             padding: .2rem .2rem 0 .2rem;
@@ -274,7 +282,7 @@ import qs from "qs";
                 text-align: center;
                 padding: 0 0 .2rem 0;
                 .icon-wrap {
-                    height: 1.2rem;
+                    height: 1rem;
                     .lot{
                         font-size: .4rem;
                     }
@@ -286,6 +294,53 @@ import qs from "qs";
                     font-size: 0.24rem;
                     color: #343434;
                 }
+            }
+        }
+    }
+    .login-header {
+        width: 100%;
+        height: 1.5rem;
+        padding: 0.3rem;
+        .icon-wrap {
+            width: 1.35rem;
+            height: 1.35rem;
+            float: left;
+            border-radius: 100%;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+            }
+        }
+
+        .iconContent {
+            float: left;
+            margin-left: 0.2rem;
+            .hello{
+                font-size: 0.3rem;
+                color: #014E40;
+                font-weight: bold; 
+                margin-top: 0.1rem; 
+            }
+            .approval-div{
+                margin-top: 0.2rem;
+                .usernamestyle {
+                    font-size: 0.3rem;
+                    color: #014E40;
+                    font-weight: bold;
+                }
+            }
+            .signbut {
+                margin-top: 0.18rem;
+                text-align: center;
+                border-radius: 0.2rem;
+                font-size: .24rem;
+                background: #FE7021;
+                color: #fff;
+                width: 2.5rem;
+                height: 0.5rem;
+                line-height: .48rem;
+                margin-left: 0.8rem;
             }
         }
     }
