@@ -75,7 +75,7 @@ import qs from "qs"
 			    padding:.3rem .2rem .1rem .2rem;
                 .name{
                     font-size: .26rem;
-                    color: #0d7199;
+                    color: #014E40;
                     font-weight: bold;
                 }		
 		    }
@@ -110,7 +110,7 @@ import qs from "qs"
         }
         .index_Ctrl_auto .link span{
             height: 0.62rem;
-            color: #000;
+            color: #343434;
             line-height: 0.35rem;
             padding: .1rem .2rem;
             font-size: .24rem;

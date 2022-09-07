@@ -45,7 +45,7 @@
             </div>
             <div class="price-box">
               <span class="price">1000 ks</span>
-              <span>5 sold</span>
+              <span class="sold">5 sold</span>
             </div>
           </div>		
       </div>
@@ -268,7 +268,7 @@ export default {
   .header{
     padding: 0 .2rem 0 .2rem;
     /* background-color: #327f9d; */
-    background: linear-gradient(to right,#442e93 0,#25a5d8 100%);
+    background: linear-gradient(to right,#014E40 0,#25a5d8 100%);
     display: flex;
     .header_logo{  
       width: 3rem;
@@ -323,12 +323,12 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #0d7199;
+        color: #014E40;
         font-weight: bold;
       }	
       .more{
         font-size: .24rem;
-        color:#ff6700;
+        color:#FE7021;
         right: .2rem;
         position: absolute;
       }	
@@ -345,10 +345,10 @@ export default {
 					align-items: center;
 					border-radius: .1rem;
 					color:white;
-					background-color: #0d7199;
+					background-color: #014E40;
 				}
         .aa{
-          color: #0d7199;
+          color: #014E40;
           padding: 0 .05rem;
         }
 			}	
@@ -385,9 +385,12 @@ export default {
 					font-size: .16rem;
 					align-items: center;
 					.price{
-						color:#ff6700;
+						color:#FE7021;
 						font-size:.24rem;
-						
+					}
+          .sold{
+						color:#343434;
+						font-size:.24rem;
 					}
 				}
 			}
@@ -398,7 +401,7 @@ export default {
       padding: .3rem .2rem;
       .name{
         font-size: .26rem;
-        color: #0d7199;
+        color: #014E40;
         font-weight: bold;
       }
     }
@@ -436,7 +439,7 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #0d7199;
+        color: #014E40;
         font-weight: bold;
       }		
 		}
@@ -466,7 +469,7 @@ export default {
 					background-color: #f0f0f0;
 				}
 				.title{
-          color: #000;
+          color: #343434;
           padding: .1rem .2rem;
           font-size: .24rem;
           display: -webkit-box;
@@ -484,7 +487,7 @@ export default {
 				.price-box{
 					padding:0 .2rem;
 					.price{
-						color:#ff6700;
+						color:#FE7021;
 						font-size:.24rem;
             padding:.1rem 0 .15rem 0;		
 					}
@@ -493,7 +496,7 @@ export default {
             font-size: .3rem;
             text-align: center;
             font-weight: bold;
-            color: #000;
+            color: #343434;
             margin: 2rem 0 0 0;
           }
 			}
@@ -505,7 +508,7 @@ export default {
 			padding:.3rem .2rem;
 			.name{
         font-size: .26rem;
-        color: #0d7199;
+        color: #014E40;
         font-weight: bold;
       }		
 		}
@@ -535,7 +538,7 @@ export default {
 					background-color: #f0f0f0;
 				}
 				.title{
-          color: #303133;
+          color: #343434;
           padding: .1rem .2rem;
           font-size: .24rem;
           display: -webkit-box;
@@ -553,7 +556,7 @@ export default {
 				.price-box{
 					padding:0 .2rem;
 					.price{
-						color:#ff6700;
+						color:#FE7021;
 						font-size:.24rem;
             padding-top:.1rem;		
 					}
@@ -576,7 +579,7 @@ export default {
             font-size: .3rem;
             text-align: center;
             font-weight: bold;
-            color: #000;
+            color: #343434;
             margin: 2.5rem 0 0 0;
           }
 			}
@@ -598,7 +601,7 @@ export default {
         .title {
           text-align: center;
           font-size: 0.28rem;
-          color: #0d7199;
+          color: #014E40;
           font-weight: bold;
         }
       }
@@ -631,7 +634,7 @@ export default {
               color: #fff;
               z-index: 10;
               padding:.1rem;
-              background: #0d7199;
+              background: #014E40;
               border-bottom-left-radius: 0.5rem;
               border-top-left-radius: 0.5rem;
             }
@@ -644,7 +647,7 @@ export default {
             word-wrap: break-word;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            color: #000;
+            color: #343434;
             height: .8rem;
             line-height: .4rem;
             text-align: left;
@@ -653,7 +656,7 @@ export default {
             margin-top: .1rem;
           }
         .price {
-          color: #ff6700;
+          color: #FE7021;
           font-size: .24rem;
           padding: .1rem 0.2rem 0 .2rem;
         }

@@ -101,7 +101,7 @@ import qs from "qs";
         padding: 0.3rem 0.2rem;
         background: #fff;
         border-bottom: .01rem solid #f1f1f1;
-        background: linear-gradient(to right,#442e93 0,#25a5d8 100%);
+        background: linear-gradient(to right,#014E40 0,#25a5d8 100%);
         #backbtn{
             font-size: .4rem;
             color: #fff;
@@ -150,14 +150,14 @@ import qs from "qs";
             font-size: .26rem;
             left: 0.9rem;
             position: absolute;
-            color: #0d7199;
+            color: #014E40;
             font-weight: bold;
         }
         .delete{
             font-size: .26rem;
             right: 0.2rem;
             position: absolute;
-            color: #0d7199;
+            color: #014E40;
             font-weight: bold;
         }
   }
@@ -209,7 +209,7 @@ import qs from "qs";
         width: 4.6rem;
         height: 0.65rem;
         font-size: 0.24rem;
-        color: #454545;
+        color: #343434;
         line-height: 0.32rem;
         display: -webkit-box;
         -webkit-box-orient: vertical;
@@ -218,7 +218,7 @@ import qs from "qs";
       }
         .price {
             font-size: 0.26rem;
-            color: #ff6700;
+            color: #FE7021;
         }
         .old-price {
             font-size: 0.24rem;

@@ -176,7 +176,7 @@ import qs from "qs";
         padding: 0.3rem 0.2rem;
         background: #fff;
         border-bottom: .01rem solid #f1f1f1;
-        background: linear-gradient(to right,#442e93 0,#25a5d8 100%);
+        background: linear-gradient(to right,#014E40 0,#25a5d8 100%);
         #backbtn{
             font-size: .4rem;
             color: #fff;

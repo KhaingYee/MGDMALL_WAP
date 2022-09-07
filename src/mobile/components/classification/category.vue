@@ -154,7 +154,7 @@ export default {
 <style lang="less" scoped>
 .header{
     padding: 0 .2rem 0 .2rem;
-    background: linear-gradient(to right,#442e93 0,#25a5d8 100%);
+    background: linear-gradient(to right,#014E40 0,#25a5d8 100%);
     display: flex;
     .header_logo{  
       width: 3rem;
