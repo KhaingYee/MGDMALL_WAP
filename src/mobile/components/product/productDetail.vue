@@ -111,8 +111,8 @@
         </div>
       </div>
     </div>
-    <ul class="floor">
-      <li class="floor-item">
+    <ul class="floor-rel">
+      <li class="floor-itemm">
         <div class="top">
           <div class="title">Same Store</div>
         </div>
@@ -251,7 +251,7 @@
       }
     };
 </script>
-<style lang="less">
+<style lang="less" scoped>
   .mint-swipe {
     height: 7.75rem;
     .mint-swipe-items-wrap {
@@ -632,10 +632,10 @@
       color: #ff6700;
     }
   }
-  .floor {
+  .floor-rel {
     background-color: #f2f1f2;
     box-sizing: border-box;
-    .floor-item {
+    .floor-itemm {
       background-color: #f2f1f2;
       display: flex;
       flex-direction: row;

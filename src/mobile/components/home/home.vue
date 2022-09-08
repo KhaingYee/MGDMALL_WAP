@@ -157,7 +157,7 @@
             v-for="all in 5"
             @click="goToProduct()"
           >
-            <img src="../../assets/images/c1.png"/>
+            <img src="../../assets/images/c2.png"/>
             <div class="promotion-discountt">
               <div class="percent">20</div>
               <div class="loti">
