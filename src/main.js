@@ -7,7 +7,7 @@ import router from './mobile/router'
 import $ from 'jquery'
 import store from './control/index'
 import './config/rem'
-import './config/rotate';
+// import './config/rotate';
 import './style/base.css'
 import 'mint-ui/lib/style.css'
 //import 'element-ui/lib/theme-default/index.css'

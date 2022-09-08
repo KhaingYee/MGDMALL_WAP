@@ -50,7 +50,7 @@
           </div>		
       </div>
     </div>
-    <div class="store-shops">
+    <div class="store-shops reveal">
       <div class="title">
         <div class="name">Store Shop
           <!-- <i class="fa-solid fa-shop"></i> -->
@@ -78,7 +78,7 @@
       </div>
     </div>
     <div>
-      <div class="goods_new">
+      <div class="goods_new reveal">
         <div class="title">
           <div class="name">New Arrivals</div>
         </div>
@@ -99,7 +99,7 @@
       </div>
     </div>
     <div>
-      <div class="goods_new">
+      <div class="goods_new reveal">
         <div class="title">
           <div class="name">Popular Product</div>
         </div>
@@ -120,7 +120,7 @@
       </div>
     </div>
     <div>
-      <div class="promotion-goods">
+      <div class="promotion-goods reveal">
         <div class="title">
           <div class="name">Promotion Product</div>
         </div>
@@ -145,7 +145,7 @@
         </div>
       </div>
     </div>
-    <ul class="floor">
+    <ul class="floor reveal">
       <li class="floor-item">
         <div class="top">
           <div class="title">Just For You</div>
@@ -189,9 +189,8 @@
 import LottieAnimation from 'lottie-web-vue'
 import NewsFlash from "./children/newsFlash";
 import toTop from "@/mobile/components/home/top"; 
-import { Indicator, Toast, MessageBox, Popup } from "mint-ui";
-import QS from "qs";
-import { mapState, mapGetters, mapActions } from 'vuex'
+import { Indicator, Toast, Popup } from "mint-ui";
+import qs from "qs";
 export default {
   name: "home",
   data() {
@@ -208,12 +207,30 @@ export default {
     this.countDownTime = '23451';
     this.countDownTimer();
   },
+  mounted(){
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 150;
+
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        } else {
+          reveals[i].classList.remove("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+  },
   methods:{
     goToProduct(){
       this.$router.push({
         path: "/product"
       });
-    },
+  },
     countDownTimer() {
       if(this.countDownTime > 0) {
           setTimeout(() => {
@@ -252,6 +269,17 @@ export default {
 .el-loading-mask {
   background: none;
   color: #999 !important;
+}
+.reveal{
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateY(0);
+  opacity: 1;
 }
 </style>
 
@@ -590,8 +618,7 @@ export default {
         padding: .1rem 0.2rem 0.2rem 0.2rem;
         overflow: hidden;
         .title {
-          text-align: center;
-          font-size: 0.28rem;
+          font-size: 0.3rem;
           color: @main-color;
           font-weight: bold;
         }
@@ -601,6 +628,7 @@ export default {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        margin: 0 .14rem;
         .floor-goods {
           margin-top: 2%;
           background-color: #fff;
@@ -612,13 +640,13 @@ export default {
           justify-content: space-between;
           img {
             width: 100%;
-            height: 3.658rem;
+            height: 3.55rem;
             align-self: center;
             border-bottom: 0.5px solid #f2f1f2;
           }
           .promotion-discountt{
             z-index: 10;
-            margin: 0rem 0 0 2.5rem;
+            margin: 0rem 0 0 2.36rem;
             position: absolute;
             display: flex;
             background-color: @main-color;
