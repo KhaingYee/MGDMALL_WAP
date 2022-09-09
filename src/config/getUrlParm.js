@@ -1,5 +1,5 @@
 function getRequest() {
-    var url = window.location.href; //获取url中"?"符后的字串
+    var url = window.location.href;
     
     var theRequest = new Object();
     var index = url.indexOf("?")

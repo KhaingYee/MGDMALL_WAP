@@ -5,30 +5,10 @@
             <div class="name">Category</div>
         </div>
       <div class="index_Ctrl_auto">
-          <span class="link">
-              <img src="../../../assets/images/c1.png"/>
-              <span> Ceramic Tile</span>
+          <span class="link" v-for="(item,index) in categories" :key="index">
+              <img :src="img_url+item.photo"/>
+              <span>{{item.category_name}}</span>
           </span>
-          <span class="link">
-            <img src="../../../assets/images/c2.png"/>
-            <span>Bathroom accessories</span>
-        </span>
-        <span class="link">
-            <img src="../../../assets/images/category.jpg"/>
-            <span>This is the electronic accessories</span>
-        </span>
-        <span class="link">
-            <img src="../../../assets/images/c1.png"/>
-            <span> Ceramic Tile</span>
-        </span>
-        <span class="link">
-          <img src="../../../assets/images/c2.png"/>
-          <span>Bathroom accessories</span>
-      </span>
-      <span class="link">
-          <img src="../../../assets/images/category.jpg"/>
-          <span>This is the electronic accessories</span>
-      </span>
       </div>
     </div>
     </div>
@@ -40,7 +20,8 @@ import qs from "qs"
         name: 'newsflash',
         data() {
             return {
-
+                categories:'', 
+                img_url: this.$httpConfig.imgUrl
             }
         },       
         methods:{
@@ -48,7 +29,7 @@ import qs from "qs"
                 this.axios.get(this.$httpConfig.getCategory,{
                 })
                 .then(res => {
-                   
+                   this.categories = res.data.category;
                 })
                 .catch(error => {
                     console.log(error);

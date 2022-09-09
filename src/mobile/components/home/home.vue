@@ -1,6 +1,5 @@
 <template>
   <div class="home" ref="home">
-    <div v-title data-title="home">home</div>
     <div class="header">
         <div>
           <img src="../../assets/images/MGD_Logo_Text.png" class="header_logo"/>
@@ -24,7 +23,6 @@
       </mt-swipe-item>
     </mt-swipe>
 
-    <!-- 快捷链接加快讯 -->
     <news-flash></news-flash>
     <div class="flash-sale">
       <div class="title">
@@ -154,7 +152,7 @@
             <div
             :key="all"
             class="floor-goods"
-            v-for="all in 5"
+            v-for="all in 9"
             @click="goToProduct()"
           >
             <img src="../../assets/images/c2.png"/>
@@ -182,6 +180,14 @@
         </div>
       </li>
     </ul>
+    <span class="isEnd" v-if="isEnd">No Product!</span>
+    <span
+      v-else
+      v-loading="floorLoading"
+      element-loading-text="Loading..."
+      element-loading-spinner="el-icon-loading"
+      class="isEnd"
+    ></span>
     <to-Top></to-Top>
   </div>
 </template>
@@ -201,6 +207,12 @@ export default {
       showTimeM:'00',
       showTimes:'00',
       countDownTime:0,
+      isEnd:false,
+      floorLoading: false,
+      isRepeat: false,
+      isBottom: false,
+      currentPage: 1,
+      floorList: [],
     };
   },
   created(){
@@ -224,13 +236,33 @@ export default {
       }
     }
     window.addEventListener("scroll", reveal);
+    // this.getFloor();
+    // var that = this;
+    // setTimeout(that.getFloor, 800);
+    // $(window).scroll(function() {
+    //   if (!that.$refs.home) return;
+    //   var bot = 700;
+    //   if ($(".floor").length) {
+    //     if (
+    //       that.isBottom == false &&
+    //       bot + $(window).scrollTop() >= 310 + $(".floor")[0].clientHeight
+    //     ) {
+    //       that.isBottom = true;
+    //       if (!this.isEnd) {
+    //         that.currentPage++;
+    //         that.getFloor();
+    //       }
+    //     }
+    //   }
+    // });
+    // $("html,body").animate({ scrollTop: "0px" }, 300);
   },
   methods:{
     goToProduct(){
       this.$router.push({
         path: "/product"
       });
-  },
+    },
     countDownTimer() {
       if(this.countDownTime > 0) {
           setTimeout(() => {
@@ -248,6 +280,40 @@ export default {
           }, 1000)
       }
     },
+    // getFloor() {
+    //   this.floorLoading = true;
+    //   if (this.isRepeat && this.currentPage == 1) {
+    //     return false;
+    //   } else {
+    //     if (this.currentPage == 1) {
+    //       this.isRepeat = true;
+    //     }
+    //     var params = { page: this.currentPage };
+    //     this.$HTTP(this.$httpConfig.guessLove, params, "post")
+    //       .then(res => {
+    //         if (res.data.status == 1) {
+    //           if (this.currentPage == 1) {
+    //               this.floorList = res.data.data;
+    //           } else {
+    //               this.floorList = [
+    //                 ...this.floorList,
+    //                 ...res.data.data
+    //               ]
+    //           }
+    //           this.isEnd = false;
+    //         }
+    //         this.isBottom = false;
+    //         if (res.data.status == 0 || res.data.data == null || res.data.data == [] || res.data.data == '') {
+    //           this.isEnd = true;
+    //         }
+    //       })
+    //       .catch(err => {
+    //         if (err.data.status == 0 || err.data.data == null || err.data.data == [] || err.data.data == '') {
+    //           this.isEnd = true;
+    //         }
+    //       });
+    //   }
+    // },
   },
   components: {
     NewsFlash,
@@ -261,14 +327,14 @@ export default {
   background-size: 100%;
 }
 .el-loading-spinner i {
-  color: #999 !important;
+  color: #014E40 !important;
 }
 .el-loading-spinner .el-loading-text {
-  color: #999 !important;
+  color: #014E40 !important;
 }
 .el-loading-mask {
   background: none;
-  color: #999 !important;
+  color: #014E40 !important;
 }
 .reveal{
   position: relative;
@@ -715,7 +781,7 @@ export default {
     justify-content: center;
     height: 1rem;
     align-items: center;
-    color: #999;
+    color: #014E40;
   }
 }
 </style>

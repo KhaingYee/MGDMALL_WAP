@@ -1,6 +1,5 @@
 <template>
   <div ref="wrap" class="classif-wrap" style="height:100%">
-    <div v-title data-title="category">category</div>
     <div class="header">
         <div>
           <img src="../../assets/images/MGD_Logo_Text.png" class="header_logo"/>

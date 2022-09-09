@@ -19,7 +19,7 @@ exports.cssLoaders = function (options) {
       sourceMap: options.sourceMap
     }
   }
-  function lessResourceLoader() { // 增加全局使用less函数
+  function lessResourceLoader() {
     var loaders = [
       cssLoader,
       'less-loader',
@@ -27,7 +27,7 @@ exports.cssLoaders = function (options) {
         loader: 'sass-resources-loader',
         options: {
           resources: [
-            path.resolve(__dirname, '../src/style/_color.less'), //定义全局变量的文件路径
+            path.resolve(__dirname, '../src/style/_color.less'),
           ]
         }
       }

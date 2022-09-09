@@ -5,12 +5,9 @@ import axios from 'axios'
 import App from './App'
 import router from './mobile/router'
 import $ from 'jquery'
-import store from './control/index'
 import './config/rem'
-// import './config/rotate';
 import './style/base.css'
 import 'mint-ui/lib/style.css'
-//import 'element-ui/lib/theme-default/index.css'
 import MintUI from 'mint-ui'
 
 import VueClipboard from 'vue-clipboard2';
@@ -43,9 +40,6 @@ import { MonthPickerInput } from 'vue-month-picker'
 Vue.use(MonthPicker)
 Vue.use(MonthPickerInput)
 
-import scrollTitle from "./utils/scrollTitle";
-Vue.prototype.showScroll = scrollTitle;
-
 import QRCode from "qrcodejs2";
 Vue.prototype.$qrCode = QRCode;
 
@@ -54,11 +48,11 @@ Vue.component('qr-code', VueQRCodeComponent)
 const myanmarPhoneNumber = require('myanmar-phonenumber');
 Vue.prototype.myanmarPhoneNumber = myanmarPhoneNumber;
 
-//检验字符串不为空
+// check string is not empty
 import checkWord from "./utils/nullCheck";
 Vue.prototype.showCheck = checkWord;
 
-Vue.filter('formatDate', function(value) { //时间戳转换
+Vue.filter('formatDate', function(value) {
     var time = new Date(Number(value) * 1000);
     var Y = time.getFullYear();
     var m = time.getMonth() + 1;
@@ -96,20 +90,17 @@ Vue.prototype.msg = function(msg) {
     msg.replace(/&#39;/g, "\'");
 };
 import httpConfig from './httpConfig';
-import constant from './config/constant';
 import HTTP from './config/HTTP';
 Vue.prototype.$HTTP = HTTP;
-Vue.prototype.$constant = constant;
 Vue.prototype.$httpConfig = httpConfig;
 // import { Spinner } from 'mint-ui'
-import '../config/globle.js' //常量
-const URl = URL,
-    load_wrap = true;
+import '../config/globle.js'
+
 Vue.config.productionTip = false;
-axios.defaults.withCredentials = true; //让ajax携带cookie
+axios.defaults.withCredentials = true;
 Vue.prototype.axios = axios;
 
-Vue.prototype.URL = URl;
+
 
 // Element
 import ElementUI from 'element-ui'
@@ -122,20 +113,9 @@ Vue.use(MintUI);
 import wx from 'weixin-js-sdk'
 Vue.prototype.$wx = wx;
 
-//wechat
-// import VueWeChatShare from 'vue-wechat-share'
-// Vue.use(VueWeChatShare)
-
 import OtpInput from "@bachdgvn/vue-otp-input";
 Vue.component("v-otp-input", OtpInput);
 
-// import WeChatShare from './lib/wechatSocialShare.js';
-// Vue.prototype.$wechat = WeChatShare;
-import WeChatShare from './utils/wxSocialshare.js';
-Vue.use(WeChatShare)
-Vue.prototype.$wechat = WeChatShare;
-
-// import { Indicator } from 'mint-ui';
 Vue.directive('title', {
     inserted: function(el, binding) {
         document.title = el.innerText
@@ -156,7 +136,6 @@ Vue.directive('img', {
 });
 
 router.beforeEach((to, from, next) => {
-    // Indicator.open('初始化...');
     switch (to.name) {
         case 'home':
             {
@@ -179,7 +158,6 @@ router.beforeEach((to, from, next) => {
 new Vue({
     el: '#app',
     router,
-    store,
     template: '<App/>',
     components: { App }
 })

@@ -1,8 +1,7 @@
-window.API_URL = 'http://mapi.shopsn.cn/';
+window.API_URL = 'http://localhost:8000/';
 
 (function(w) {
 
-    //截取当前访问者的url 参数
     this.split_url = function(name) {
             var url = window.location.href;
             var index = url.indexOf(name);
@@ -22,20 +21,6 @@ window.API_URL = 'http://mapi.shopsn.cn/';
 
 
 })(window);
-//如果下次访问时 时间超出设置时间就清除localStorage
-// (function() {
-//     var curTime = localStorage.getItem('cur_Time');
-
-//     var time = parseInt(curTime);
-
-//     if (curTime === 'undefined' || curTime === null) {
-//         return;
-//     }
-
-//     if (new Date().getTime() - time > 172800000) {
-//         localStorage.clear();
-//     }
-// })();
 
 String.prototype.replaceAll = function(str, bystr) {
     var regExp = new RegExp(str, "g");

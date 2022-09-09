@@ -1,4 +1,4 @@
-//滚动条在Y轴上的滚动距离
+//The scroll distance of the scroll bar on the Y axis
 export function getScrollTop(){
     var scrollTop = 0, bodyScrollTop = 0, documentScrollTop = 0;
     if(document.body){
@@ -13,7 +13,7 @@ export function getScrollTop(){
 
 
 
-//文档的总高度
+//Overall height of the document
 export function getScrollHeight(){
     var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
     if(document.body){
@@ -28,7 +28,7 @@ export function getScrollHeight(){
 
 
 
-//浏览器视口的高度
+//The height of the browser viewport
 export function getWindowHeight(){
     var windowHeight = 0;
     if(document.compatMode == "CSS1Compat"){

@@ -58,7 +58,7 @@
 </template>
 <script>
 export default {
-  name: "page-footer",
+  name: "footer",
   data() {
     return {
       isClass: sessionStorage.getItem("router_index"),
