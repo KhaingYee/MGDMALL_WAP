@@ -138,7 +138,7 @@
       </li>
     </ul>
       <div class="pro-footer">
-        <div class="buy-now">Buy Now</div>
+        <div class="buy-now" @click="goToBuy">Buy Now</div>
         <div class="add-cart">Add To Cart</div>
       </div>
       <div class="blance"></div>
@@ -186,7 +186,7 @@
           </div>
         </div>
         <div class="pro-footer">
-          <div class="buy-now">Buy Now</div>
+          <div class="buy-now" @click="goToBuy">Buy Now</div>
           <div class="add-cart">Add To Cart</div>
         </div>
        </div>
@@ -246,6 +246,11 @@
         gotoquestion(){
           this.$router.push({
             path:"/question"
+          })
+        },
+        goToBuy(){
+          this.$router.push({
+            path:"/seeOrder"
           })
         }
       }

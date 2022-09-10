@@ -236,26 +236,26 @@ export default {
       }
     }
     window.addEventListener("scroll", reveal);
-    // this.getFloor();
-    // var that = this;
-    // setTimeout(that.getFloor, 800);
-    // $(window).scroll(function() {
-    //   if (!that.$refs.home) return;
-    //   var bot = 700;
-    //   if ($(".floor").length) {
-    //     if (
-    //       that.isBottom == false &&
-    //       bot + $(window).scrollTop() >= 310 + $(".floor")[0].clientHeight
-    //     ) {
-    //       that.isBottom = true;
-    //       if (!this.isEnd) {
-    //         that.currentPage++;
-    //         that.getFloor();
-    //       }
-    //     }
-    //   }
-    // });
-    // $("html,body").animate({ scrollTop: "0px" }, 300);
+    this.getFloor();
+    var that = this;
+    setTimeout(that.getFloor, 800);
+    $(window).scroll(function() {
+      if (!that.$refs.home) return;
+      var bot = 700;
+      if ($(".floor").length) {
+        if (
+          that.isBottom == false &&
+          bot + $(window).scrollTop() >= 310 + $(".floor")[0].clientHeight
+        ) {
+          that.isBottom = true;
+          if (!this.isEnd) {
+            that.currentPage++;
+            that.getFloor();
+          }
+        }
+      }
+    });
+    $("html,body").animate({ scrollTop: "0px" }, 300);
   },
   methods:{
     goToProduct(){
@@ -280,40 +280,40 @@ export default {
           }, 1000)
       }
     },
-    // getFloor() {
-    //   this.floorLoading = true;
-    //   if (this.isRepeat && this.currentPage == 1) {
-    //     return false;
-    //   } else {
-    //     if (this.currentPage == 1) {
-    //       this.isRepeat = true;
-    //     }
-    //     var params = { page: this.currentPage };
-    //     this.$HTTP(this.$httpConfig.guessLove, params, "post")
-    //       .then(res => {
-    //         if (res.data.status == 1) {
-    //           if (this.currentPage == 1) {
-    //               this.floorList = res.data.data;
-    //           } else {
-    //               this.floorList = [
-    //                 ...this.floorList,
-    //                 ...res.data.data
-    //               ]
-    //           }
-    //           this.isEnd = false;
-    //         }
-    //         this.isBottom = false;
-    //         if (res.data.status == 0 || res.data.data == null || res.data.data == [] || res.data.data == '') {
-    //           this.isEnd = true;
-    //         }
-    //       })
-    //       .catch(err => {
-    //         if (err.data.status == 0 || err.data.data == null || err.data.data == [] || err.data.data == '') {
-    //           this.isEnd = true;
-    //         }
-    //       });
-    //   }
-    // },
+    getFloor() {
+      this.floorLoading = true;
+      if (this.isRepeat && this.currentPage == 1) {
+        return false;
+      } else {
+        if (this.currentPage == 1) {
+          this.isRepeat = true;
+        }
+        var params = { page: this.currentPage };
+        this.$HTTP(this.$httpConfig.getproduct, params, "post")
+          .then(res => {
+            if (res.data.status == 1) {
+              if (this.currentPage == 1) {
+                  this.floorList = res.data.data;
+              } else {
+                  this.floorList = [
+                    ...this.floorList,
+                    ...res.data.data
+                  ]
+              }
+              this.isEnd = false;
+            }
+            this.isBottom = false;
+            if (res.data.status == 0 || res.data.data == null || res.data.data == [] || res.data.data == '') {
+              this.isEnd = true;
+            }
+          })
+          .catch(err => {
+            if (err.data.status == 0 || err.data.data == null || err.data.data == [] || err.data.data == '') {
+              this.isEnd = true;
+            }
+          });
+      }
+    },
   },
   components: {
     NewsFlash,
