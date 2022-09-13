@@ -7,7 +7,7 @@
         <div class="address">
             <div class="title">
                 <span class="name">Address</span>
-                <span class="edit">Edit</span>
+                <span class="edit" @click="gotoaddress">Edit</span>
             </div>
             <div class="detail">
                 <i class="fa-solid fa-location-dot" id="img"></i>
@@ -65,10 +65,15 @@
         back() {
             this.$router.go(-1);
         },
+        gotoaddress(){
+            this.$router.push({
+                path:'/addAddress'
+            })
+        }
     }
     };
 </script>
-<style lang="less">
+<style lang="less" scoped>
 .seeOrder{
     .header{
         display: flex;
