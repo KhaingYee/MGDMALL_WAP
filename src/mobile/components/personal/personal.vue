@@ -3,6 +3,7 @@
         <div class="header">
             <i class="fa-solid fa-circle-chevron-left" id="backbtn" @click="back"></i>
             <div class="title">Account</div>
+            <i class="fa-solid fa-gear fa-spin" id="seeting-btn" @click="showpopup"></i>
         </div>
         <div class="login-header">
             <div class="icon-wrap">
@@ -13,7 +14,7 @@
                 <!-- <div class="approval-div">
                     <span class="usernamestyle">0995465673</span>
                 </div> -->
-                <div class="signbut">Login / Sign Up</div>
+                <div class="signbut" @click="gotologin">Login / Sign Up</div>
             </div>
         </div>
         <div class="navserver1">
@@ -142,17 +143,25 @@
                 </li>
             </ul>
         </div>
+        <mt-popup v-model="popupVisible" position="top" class="mint-popup-4">
+            <div class="show-popup">
+                <div class="title">MGD MALL<i class="fa-solid fa-angle-right" id="right-btn"></i></div>
+                <div class="title">Login<i class="fa-solid fa-angle-right" id="right-btn"></i></div>
+                <div class="title">Language<i class="fa-solid fa-angle-right" id="right-btn"></i></div>
+                <div class="title">Account Settings<i class="fa-solid fa-angle-right" id="right-btn"></i></div>
+            </div>
+        </mt-popup>
     </div>
 </template>
 <script>
 import LottieAnimation from 'lottie-web-vue'
-import { MessageBox, Toast } from "mint-ui";
+import { MessageBox, Toast,Popup } from "mint-ui";
 import qs from "qs";
     export default {
     name: "personal",
     data() {
         return {
-
+            popupVisible:false,
         };
     },
     components: {
@@ -165,7 +174,14 @@ import qs from "qs";
         back() {
             this.$router.go(-1);
         },
-
+        showpopup(){
+            this.popupVisible = true;
+        },
+        gotologin(){
+            this.$router.push({
+            path:"/login"
+          })
+        }
     }
     };
 </script>
@@ -184,6 +200,12 @@ import qs from "qs";
         .title{
             font-size: .3rem;
             margin-left: 2.6rem;
+            color: #fff;
+        }
+        #seeting-btn{
+            right: .2rem;
+            position: absolute;
+            font-size: .4rem;
             color: #fff;
         }
     }
@@ -341,6 +363,24 @@ import qs from "qs";
                 height: 0.5rem;
                 line-height: .48rem;
                 margin-left: 0.8rem;
+            }
+        }
+    }
+    .mint-popup-4{
+        left: 79.07%;
+    }
+    .show-popup{
+        background-color: #fff;
+        width: 2.5rem;
+        padding: 0.1rem 0.3rem 0.1rem 0.3rem;
+        .title{
+            font-size: .26rem;
+            line-height: .8rem;
+            #right-btn{
+                font-size: .3rem;
+                right: 0.2rem;
+                position: absolute;
+                line-height: .8rem;
             }
         }
     }

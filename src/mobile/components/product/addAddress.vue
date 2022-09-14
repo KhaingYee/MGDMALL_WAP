@@ -68,7 +68,7 @@
     </div>
 </template>
 <script>
-import { Popup,Toast } from 'mint-ui';
+import { Field,Popup,Toast } from 'mint-ui';
     export default {
     name: "addAddress",
     data() {
