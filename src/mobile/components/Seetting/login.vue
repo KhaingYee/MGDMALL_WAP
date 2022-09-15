@@ -4,7 +4,7 @@
         <div class="user-box">
             <div class="name">Phone Number</div>
             <div class="enter-box">
-                <i class="fa-regular fa-user" id="photo"></i>
+                <i class="fa-solid fa-phone" id="photo"></i>
                 <input type="text" placeholder="Enter your phone number" v-model="phone" class="input-enter">
             </div>
         </div>
@@ -30,7 +30,7 @@
             <i class="fa-brands fa-google" id="iconf"></i>
             <span class="text">Sign In With Gmail</span>
         </div>
-        <div class="phone-div">Sign UP With Phone</div>
+        <div class="phone-div" @click="gotosignUp">Don't have account?<span>&nbsp;Sign UP</span></div>
     </div>
 </template>
 <script>
@@ -43,6 +43,13 @@
                 password:''
             }
         },
+        methods:{
+            gotosignUp(){
+                this.$router.push({
+                path:"/signUp"
+                })
+            }
+        } 
     }
 </script>
 <style lang="less">
@@ -66,6 +73,7 @@
             padding: 0.3rem 0;
            #photo{
             font-size: .3rem;
+            color:#999;
            }
            .input-enter{
             font-size: .26rem;
@@ -171,11 +179,16 @@
         }
     }
     .phone-div{
-        margin: 1.5rem 0 0 0;
+        margin: .9rem 0 0 0;
         color: #014E40;
         text-align: center;
-        font-size: .3rem;
-        font-weight: bold;
+        font-size: .26rem;
+        padding: .3rem 0;
+        span{
+            color: #014E40;
+            font-size: .26rem;
+            font-weight: bold; 
+        }
     }
 }
 </style>

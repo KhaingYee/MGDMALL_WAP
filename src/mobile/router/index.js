@@ -12,6 +12,7 @@ const question = r => require(['@/mobile/components/product/question'], r);
 const seeOrder = r => require(['@/mobile/components/product/seeOrder'], r);
 const addAddress = r => require(['@/mobile/components/product/addAddress'], r);
 const login = r => require(['@/mobile/components/Seetting/login'], r);
+const signUp = r => require(['@/mobile/components/Seetting/signUp'], r);
 const subject = r => require(['@/mobile/components/subject'], r);
 
 Vue.use(Router)
@@ -85,6 +86,11 @@ const router = new Router({
                 path: '/login',
                 name: 'login',
                 component: login
+            },
+            {
+                path: '/signUp',
+                name: 'signUp',
+                component: signUp
             },
         ]
     }],

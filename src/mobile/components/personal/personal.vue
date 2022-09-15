@@ -320,7 +320,7 @@ import qs from "qs";
         }
     }
     .login-header {
-        width: 100%;
+        /* width: 100%; */
         height: 1.5rem;
         padding: 0.3rem;
         .icon-wrap {
