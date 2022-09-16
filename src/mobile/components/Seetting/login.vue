@@ -12,11 +12,14 @@
             <div class="name">Password</div>
             <div class="enter-box">
                 <i class="fa-solid fa-lock" id="photo"></i>
-                <input type="text" placeholder="Enter your password" v-model="password" class="input-enter">
+                <input type="password" placeholder="Enter your password" v-model="password" class="input-enter" v-if="checkeye">
+                <input type="text" placeholder="Enter your password" v-model="password" class="input-enter" v-else>
+                <i class="fa-regular fa-eye-slash" id="eyepho" @click="noteye" v-show="iconnot"></i>
+                <i class="fa-regular fa-eye" id="eyepho"  @click="seeeye"  v-show="!iconnot"></i>
             </div>
         </div>
-        <div class="forgot">Forgot Password?</div>
-        <div class="btn-log">LOGIN</div>
+        <div class="forgot" @click="gotoforget">Forgot Password?</div>
+        <div class="btn-log" @click="gotohome">LOGIN</div>
         <div class="or-div">
             <span class="orline"></span>
             <span class="ortext">OR</span>
@@ -40,7 +43,9 @@
         data(){
             return {
                 phone:'',
-                password:''
+                password:'',
+                checkeye:true,
+                iconnot:true,
             }
         },
         methods:{
@@ -48,7 +53,25 @@
                 this.$router.push({
                 path:"/signUp"
                 })
-            }
+            },
+            gotoforget(){
+                this.$router.push({
+                path:"/forgetpass"
+                })
+            },
+            gotohome(){
+                this.$router.push({
+                path:"/home"
+                })
+            },
+            noteye(){
+                this.checkeye = false;
+                this.iconnot = !this.iconnot;
+            },
+            seeeye(){
+                this.checkeye = true;
+                this.iconnot = !this.iconnot;
+            },
         } 
     }
 </script>
@@ -84,7 +107,7 @@
         }
     }
     .password-box{
-        padding: .3rem .5rem .2rem .5rem;
+        padding: .3rem .5rem 0 .5rem;
         .name{
             font-size: .26rem;
         }
@@ -101,16 +124,24 @@
             margin-left: 0.2rem;
             border: none;
            }
+           #eyepho{
+            font-size: .4rem;
+            color: #ec2121;
+            right: 0.7rem;
+            position: absolute;
+            align-items: center;
+           }
         }
     }
     .forgot{
         font-size: .26rem;
         right: 0.5rem;
         position: absolute;
+        padding: .3rem 0 .2rem 0;
     }
     .btn-log{
         font-size: .3rem;
-        margin: .8rem 0.5rem 0.3rem 0.5rem;
+        margin: 1rem 0.5rem 0.3rem 0.5rem;
         text-align: center;
         background: linear-gradient(to right,#014E40 0,#25a5d8 100%);
         color: #fff;

@@ -1,17 +1,10 @@
 <template>
-    <div class="signup">
-        <div class="signup-title">Sign Up</div>
+    <div class="forgetpass">
+        <div class="signup-title">Forgot Password</div>
         <div class="user-box">
-            <div class="name">User Name</div>
-            <div class="enter-box">
-                <i class="fa-regular fa-user" id="photo"></i>
-                <input type="text" placeholder="Enter your user name" v-model="userName" class="input-enter">
-            </div>
-        </div>
-        <div class="password-box">
             <div class="name">Phone Number</div>
             <div class="enter-box">
-                <i class="fa-solid fa-phone" id="photo"></i>
+                <i class="fa-regular fa-user" id="photo"></i>
                 <input type="text" placeholder="Enter your phone number" v-model="phone" class="input-enter">
             </div>
         </div>
@@ -30,52 +23,37 @@
                 <input type="text" placeholder="Enter your password" v-model="password" class="input-enter">
             </div>
         </div>
-        <div class="password-box">
-            <div class="name">Confirm Password</div>
-            <div class="enter-box">
-                <i class="fa-solid fa-lock" id="photo"></i>
-                <input type="text" placeholder="Enter your confirm password" v-model="conpassword" class="input-enter">
-            </div>
-        </div>
-        <div class="btn-log" @click="gotologin">Sign Up</div>
-        <div class="gologin" @click="gobacklogin">Already have an account?<span>&nbsp;Login</span></div>
+        <div class="btn-log" @click="gotohome">Confirm</div>
     </div>
 </template>
 <script>
 
     export default {
-        name : 'singUp',
+        name : 'forgetpass',
         data(){
             return {
                 phone:'',
-                password:'',
-                conpassword:'',
-                userName:'',
-                verification:''
+                verification:'',
+                password:''
             }
         }, 
         methods:{
-            gobacklogin(){
+            gotohome(){
                 this.$router.push({
-                path:"/login"
-                })
-            },
-            gotologin(){
-                this.$router.push({
-                path:"/login"
+                path:"/home"
                 })
             }
         }  
     }
 </script>
 <style lang="less">
-.signup{
+.forgetpass{
     background-color: #fff;
     height: 100%;
     .signup-title{
         font-size: .5rem;
         font-weight: bold;
-        padding: .6rem 0;
+        padding: 1rem 0;
         text-align: center;
         color: @main-color;
     }
@@ -125,7 +103,7 @@
             text-align: center;
             line-height: .8rem;
             position: absolute;
-            top: 39%;
+            top: 34%;
             right: 5%;
             color:#fff;
             background: linear-gradient(to right,#014E40 0,#25a5d8 100%);
@@ -139,18 +117,9 @@
         background: linear-gradient(to right,#014E40 0,#25a5d8 100%);
         color: #fff;
         height: 0.8rem;
-        line-height: .8rem;
+        line-height: .75rem;
         border-radius: 0.5rem;
     }
-    .gologin{
-        font-size: .26rem; 
-        text-align: center;
-        padding: .4rem 0;
-        span{
-            font-size: .26rem; 
-            color:#014E40;
-            font-weight:bold;
-        }
-    }
+
 }
 </style>
